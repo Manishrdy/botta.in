@@ -1,0 +1,1877 @@
+{
+  "schema_version": 1,
+  "review_status": "approved",
+  "sources": [
+    {
+      "id": "swe",
+      "kind": "resume",
+      "filename": "ManishBotta_Resume_SWE.pdf",
+      "sha256": "10d139d49b40d320222d1db4c3ce0825825389cda2da1e8bb829ba9bd887b760",
+      "pages": 2,
+      "url": null,
+      "git_blob_sha": null
+    },
+    {
+      "id": "aie",
+      "kind": "resume",
+      "filename": "ManishBotta_Resume_AIE.pdf",
+      "sha256": "9b3f2972457d3c6d88cc68a614bacdb57d3e54c30f907a39999b82582a00f41e",
+      "pages": 2,
+      "url": null,
+      "git_blob_sha": null
+    },
+    {
+      "id": "fde",
+      "kind": "resume",
+      "filename": "ManishBotta_Resume_FDE_SWE.pdf",
+      "sha256": "a5f3e6c88bbb3bcfd9d239f3ef6a9e8259800650792b7d60ec6eb90343862331",
+      "pages": 2,
+      "url": null,
+      "git_blob_sha": null
+    },
+    {
+      "id": "ai-fde",
+      "kind": "resume",
+      "filename": "ManishBotta_Resume_AI_FDE.pdf",
+      "sha256": "0e576b32d345f0249e50d155807e7ddc31064ab54345b6a646dfcfb0b51c1722",
+      "pages": 2,
+      "url": null,
+      "git_blob_sha": null
+    },
+    {
+      "id": "owner",
+      "kind": "owner_response",
+      "filename": ".preference/phase-0-owner-clarifications.txt",
+      "sha256": "307acdec90fb651d701177ce4923629aaae9d70af9e7f5ef42389bc7878cbfd6",
+      "pages": null,
+      "url": null,
+      "git_blob_sha": null
+    },
+    {
+      "id": "github-coldstart-1",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/coldstart/README.md",
+      "sha256": "0f9ce77af9588964dc757e72cd2a1d5440e25a28ef30d74ad5122e7c9121039c",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/coldstart/blob/main/README.md",
+      "git_blob_sha": "5f63619568ebc17b60c3ab5d2c56457d69115733"
+    },
+    {
+      "id": "github-job-pulse-2",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/job-pulse/README.md",
+      "sha256": "1f19ec1904cf2cbff63fface8eb60ad5d78e493cd918fd0077de785e21a431e3",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/job-pulse/blob/main/README.md",
+      "git_blob_sha": "147923836a9f89a56da43c126b4d3a47a37bfd59"
+    },
+    {
+      "id": "github-role-collector-3",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/role-collector/README.md",
+      "sha256": "2a166786e9d4ae3f28406f6e011888ac0d89904a987b63a655c5f8aecb4a1b0a",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/role-collector/blob/main/README.md",
+      "git_blob_sha": "658307b29926918121e4e295bc11b3ba9ad71a5b"
+    },
+    {
+      "id": "github-resume-tailor-4",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/Resume-TailorExtension-Pro/README.md",
+      "sha256": "d21c6e61512608cdd9d8fb717c9a89cfab25147ee3e05a40565651d905e16090",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/README.md",
+      "git_blob_sha": "e0630f84232a92f94512f82f4e737f12905f320a"
+    },
+    {
+      "id": "github-codemate-5",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/README.md",
+      "sha256": "510a5ac19dc8b5450a5566dd3769b3764eedbb6b8a701a22014d40417077f1dd",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/blob/main/README.md",
+      "git_blob_sha": "63ac1270a84465b4d1007e2c57be772e4c1b8fa5"
+    },
+    {
+      "id": "github-resume-builder-6",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/AI-Driven-Resume-Builder/README.md",
+      "sha256": "a7067186eab2d45b1d825d35ab6c80862d829e736d80060a668d7cdc5cf31dfc",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/AI-Driven-Resume-Builder/blob/main/README.md",
+      "git_blob_sha": "0083f2636c0c85207bca43beb4019b46f98bd1cb"
+    },
+    {
+      "id": "github-emotion-detector-7",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/Emotion-Detector--Text-Based-Emotion-Classification-Using-Machine-Learning/README.md",
+      "sha256": "04ca6fbc5deeb2ffe767e7d603cbbdcd6256d827aba0acd19d014e7e12794cff",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/Emotion-Detector--Text-Based-Emotion-Classification-Using-Machine-Learning/blob/main/README.md",
+      "git_blob_sha": "5598d26036a43ad75c61b95ac96458174b20a617"
+    },
+    {
+      "id": "github-coldstart-8",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/coldstart/pyproject.toml",
+      "sha256": "8426ff16960bff5f900401a8b1d70f3b4d960bedfcc8a2105cf5c897a68f1a1b",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/coldstart/blob/main/pyproject.toml",
+      "git_blob_sha": "84ebfd129fd152a1a05980eb6164abdd57c1cc0b"
+    },
+    {
+      "id": "github-coldstart-9",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/coldstart/src/coldstart/pipeline.py",
+      "sha256": "6f1725db7dc95c6f122eb8b7c014958a84e00143cc522f6b74d114adf71e39b1",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/coldstart/blob/main/src/coldstart/pipeline.py",
+      "git_blob_sha": "135e2a5ab1c7f7e65d2aee88eb9f4051f4f0e116"
+    },
+    {
+      "id": "github-job-pulse-10",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/job-pulse/jobpulse/database.py",
+      "sha256": "bee03c53de3a94fa2b913590ade5cd771bcc619332403478a64c0a8696ef09ce",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/job-pulse/blob/main/jobpulse/database.py",
+      "git_blob_sha": "3584d46683b93ee4da4ef578fa8091a06fff0729"
+    },
+    {
+      "id": "github-role-collector-11",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/role-collector/pyproject.toml",
+      "sha256": "ce64d0bb8b6a4e28326be923778a3c1d83fb9370ee0dd601c437501e86640955",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/role-collector/blob/main/pyproject.toml",
+      "git_blob_sha": "98e33f95e90edc8c3578faa81455349ab3a8a52b"
+    },
+    {
+      "id": "github-role-collector-12",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/role-collector/src/job_agent/graph/nodes.py",
+      "sha256": "806d9af9cc1950877e32d7ea3d261782c70b1d5142e20253d02cd932d17aa45f",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/role-collector/blob/main/src/job_agent/graph/nodes.py",
+      "git_blob_sha": "8c197273edbbd70e5dd3c1b268aa446b712ef6e6"
+    },
+    {
+      "id": "github-resume-tailor-13",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/Resume-TailorExtension-Pro/extension/manifest.json",
+      "sha256": "7af1c5906b73ccf40478b823db8478e243ae3c6fa54d4dd31e553f7f6a903641",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/extension/manifest.json",
+      "git_blob_sha": "33a1330cf4d551c9d61fe04a3f65cfe0273f3e54"
+    },
+    {
+      "id": "github-codemate-14",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/fine_tune/prepare_codealpaca_dataset.py",
+      "sha256": "c76609eb2d50c833bbba9de1895b4018203502afa38b4dfc048ca40e3ab03fe3",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/blob/main/fine_tune/prepare_codealpaca_dataset.py",
+      "git_blob_sha": "8659a843929415038bfeee0256cadb250db5468b"
+    },
+    {
+      "id": "github-codemate-15",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/evaluation/evaluate_qlora_model.py",
+      "sha256": "14080167b4d3b2d862a1432b3ad2e2ce7460e822d9f24b4befe6d31f22733d6e",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/blob/main/evaluation/evaluate_qlora_model.py",
+      "git_blob_sha": "336b897ca525028841d535d42260d613b726102e"
+    },
+    {
+      "id": "github-resume-builder-16",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/AI-Driven-Resume-Builder/main.py",
+      "sha256": "84e6d1ea407632bfeec1046e8393391360734bd5e853305b264e152f62ad66f1",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/AI-Driven-Resume-Builder/blob/main/main.py",
+      "git_blob_sha": "ac6c9fbc39fe96c070626955782eddd8dc35ff65"
+    },
+    {
+      "id": "github-resume-builder-17",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/AI-Driven-Resume-Builder/scripts/enhanceResumeWithAPI.py",
+      "sha256": "8caded17d12a29bc49800e1461dde2efe2ae84ff4c108fd596a30cf42715a0c6",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/AI-Driven-Resume-Builder/blob/main/scripts/enhanceResumeWithAPI.py",
+      "git_blob_sha": "5f388b1e7e7fa425b24b56dc81ed97b489d00369"
+    },
+    {
+      "id": "github-emotion-detector-18",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/Emotion-Detector--Text-Based-Emotion-Classification-Using-Machine-Learning/app.py",
+      "sha256": "4e7db21a4d09a9c088586aca83c0c937d2694566cd8ca9f4ed543c79e76fb575",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/Emotion-Detector--Text-Based-Emotion-Classification-Using-Machine-Learning/blob/main/app.py",
+      "git_blob_sha": "4ce467e0cf04798cca752cb0847932977faa61fc"
+    },
+    {
+      "id": "github-codemate-19",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/training-excerpts.txt",
+      "sha256": "47833dfc6709c895cd8e56ce8a50768e9117e454cb5bc4426e614b2fdc080fe5",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/blob/main/CodeMate_FineTuning_Gemma_QLoRA.ipynb",
+      "git_blob_sha": "6b74068538a64c25969cd5dce4b24f895dffe4e2"
+    },
+    {
+      "id": "github-resume-tailor-20",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/Resume-TailorExtension-Pro/backend/src/services/gemini.py",
+      "sha256": "00ca23caf20a642b092fcf8e26daef07891e56927511b431b97304557590fe90",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/backend/src/services/gemini.py",
+      "git_blob_sha": "50d52b6c237a83b182909eaa6f39407d6175f571"
+    },
+    {
+      "id": "github-resume-tailor-21",
+      "kind": "github_file",
+      "filename": ".preference/repository-evidence/Resume-TailorExtension-Pro/backend/src/services/template_document_generator.py",
+      "sha256": "cf07b3b66cd461cafa03ea9118531b228d7255bbf7e86c98288c58d6537c727e",
+      "pages": null,
+      "url": "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/backend/src/services/template_document_generator.py",
+      "git_blob_sha": "52692e89e44fbf4a89a315778a37325054028180"
+    }
+  ],
+  "site_settings": {
+    "name": "Manish Botta",
+    "site_url": "https://botta.in/",
+    "email": "manish.botta@hotmail.com",
+    "location": "San Francisco, CA",
+    "target_tracks": [
+      "Software / SDE / Founding Engineer",
+      "AI Engineer",
+      "Forward-Deployed Engineer",
+      "Forward-Deployed AI Engineer"
+    ],
+    "bio": {
+      "text": "Software engineer building backend and applied AI systems, from enterprise integrations and retrieval agents to a solo-built B2B SaaS platform. Work spans discovery, implementation, deployment, and production operations.",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    "resume_url": null
+  },
+  "social_links": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/Manishrdy",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/manish-reddyb",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "tradeliv",
+      "company": "TradeLiv",
+      "role": "Founding Software Engineer (product and engineering)",
+      "employment_type": null,
+      "location": null,
+      "start_date": "2026-04",
+      "end_date": null,
+      "current": true,
+      "date_review_required": false,
+      "bullets": [
+        {
+          "text": "Owned product and engineering as the first hire and sole engineer, taking a B2B SaaS platform from zero to production in four months with 40 REST endpoints, PostgreSQL, and designer, admin, and client access tiers.",
+          "sources": [
+            "swe",
+            "fde",
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Embedded with early design-studio customers to scope shifting requirements, then built role-based access and real-time SSE portals around each tier’s workflows.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Cut new e-commerce integration time from two days to under 15 minutes by replacing per-site scrapers with a Claude and Puppeteer pipeline that turns product URLs into structured data.",
+          "sources": [
+            "swe",
+            "fde",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Chose Stripe subscription billing over usage metering after mapping the pricing model, then shipped checkout, webhooks, and entitlement checks end to end.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Ran the stack on one 1GB OCI VM, offloading builds to GitHub Actions and using health-gated cutover with automatic rollback for zero-downtime deployment; owned incidents through customer follow-up.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Raised semantic retrieval accuracy 36 percent by replacing fixed-size chunking with heading-scoped parent and child chunks across documents above 20 MB.",
+          "sources": [
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Chose Qwen3 8B embeddings for retrieval quality over serving cost, pairing a reranker with citation-grounded generation so answers trace to source chunks.",
+          "sources": [
+            "aie"
+          ]
+        }
+      ],
+      "skills": [
+        "PostgreSQL",
+        "Stripe",
+        "SSE",
+        "Claude",
+        "Puppeteer",
+        "OCI",
+        "GitHub Actions",
+        "Qwen3 8B embeddings"
+      ],
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ],
+      "order": 0
+    },
+    {
+      "id": "microsoft",
+      "company": "Microsoft",
+      "role": "Software Engineer (Contract)",
+      "employment_type": "Contract",
+      "location": null,
+      "start_date": "2025-08",
+      "end_date": "2026-04",
+      "current": false,
+      "date_review_required": false,
+      "bullets": [
+        {
+          "text": "Built a multi-agent orchestration system for field sales across Salesforce, HubSpot, OneDrive, and internal databases on Azure, serving 75,000 daily users and 1.5 million requests over six months.",
+          "sources": [
+            "aie",
+            "ai-fde",
+            "owner"
+          ]
+        },
+        {
+          "text": "Scoped the first release by shadowing field sales representatives and prioritizing their three most common queries.",
+          "sources": [
+            "fde"
+          ]
+        },
+        {
+          "text": "Cut contract and document lookup from about 15 minutes to under 30 seconds with an agent backend over Salesforce, HubSpot, OneDrive, and internal SQL.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Raised retrieval accuracy from 61% to 89% with chunk-level indexing, reranking, and a vector cache in front of the RAG layer.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Cut per-query inference cost 45% by fine-tuning a smaller model with QLoRA and PEFT and routing simple intents away from the larger model.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Moved authorization inside the agent loop with Graph API tenant isolation and RBAC per request, restricting retrieval to contracts the requesting persona could access.",
+          "sources": [
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Replaced blanket LLM screening with keyword and prompt-injection matching, spaCy relevance scoring, and a Llama judge for low-confidence inputs; added intent classification, tool-planning guardrails, and scope checks before external tool calls.",
+          "sources": [
+            "aie",
+            "ai-fde",
+            "swe"
+          ]
+        },
+        {
+          "text": "Added cross-encoder reranking as the corpus grew from 10,000 to 300,000 documents, tracking context relevance, recall, precision, and MRR to catch retrieval regressions.",
+          "sources": [
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Hardened tool calls with exponential backoff, capped retries, a dead-letter queue, and per-node fallbacks, tracing runs in LangSmith to investigate divergent plans.",
+          "sources": [
+            "aie"
+          ]
+        },
+        {
+          "text": "Cut manual data-handling overhead 70% by integrating OAuth 2.0 with HubSpot and Salesforce for contract and record lookups.",
+          "sources": [
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Cut release time from a manual half-day to a 12-minute GitHub Actions pipeline by containerizing services and deploying on Azure through customer review and approval.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        }
+      ],
+      "skills": [
+        "Azure",
+        "Salesforce",
+        "HubSpot",
+        "OneDrive",
+        "SQL",
+        "Graph API",
+        "RBAC",
+        "OAuth 2.0",
+        "RAG",
+        "QLoRA",
+        "PEFT",
+        "spaCy",
+        "Llama",
+        "LangSmith",
+        "GitHub Actions"
+      ],
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde",
+        "owner"
+      ],
+      "order": 1
+    },
+    {
+      "id": "yellow-ai",
+      "company": "Yellow.ai",
+      "role": "Software Engineer",
+      "employment_type": null,
+      "location": null,
+      "start_date": "2021-09",
+      "end_date": "2023-07",
+      "current": false,
+      "date_review_required": false,
+      "bullets": [
+        {
+          "text": "Delivered conversational-AI systems for 24+ enterprise clients including IHCL, Dr. Reddy’s, Bajaj Finserv, and Spotify, scoping use cases with customer teams.",
+          "sources": [
+            "fde",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Unblocked launches through on-site CRM, ticketing, and data integrations at IHCL, Dr. Reddy’s, and Bajaj Finserv, driving InfoSec approvals on both sides.",
+          "sources": [
+            "fde",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Held 99.9% uptime on the messaging backbone as the product received 100M+ daily events across all customers, owning consumer services and retry paths on a six-engineer platform team.",
+          "sources": [
+            "swe",
+            "fde",
+            "owner"
+          ]
+        },
+        {
+          "text": "Cut p95 API response time from 820ms to 490ms by rewriting MySQL and MongoDB query plans, adding composite indexes, and caching hot reads in Redis.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Onboarded 50+ enterprise CRM integrations without latency regression through a shared connector interface reused per client.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Cut pipeline maintenance roughly in half by migrating legacy rule-based intent handling to LLM-backed classification across 20+ enterprise bot workflows.",
+          "sources": [
+            "swe"
+          ]
+        },
+        {
+          "text": "Carried on-call for the messaging tier, adding consumer-lag alerting and runbooks to reduce repeat incidents.",
+          "sources": [
+            "swe"
+          ]
+        },
+        {
+          "text": "Ran client standups, demos, and onboarding through go-live, feeding recurring integration gaps into the Studio roadmap as reusable connectors.",
+          "sources": [
+            "fde"
+          ]
+        },
+        {
+          "text": "Fine-tuned BERT and open-source LLMs with LoRA for intent classification and named entity recognition, lifting chatbot accuracy 60% and CSAT 35%.",
+          "sources": [
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Started migrating rule-based conversation backends to LLM-driven agents in late 2022, implementing input/output filtering and tenant-isolated permission checks.",
+          "sources": [
+            "aie"
+          ]
+        },
+        {
+          "text": "Replaced uniform Kafka campaign rate limits with region-tiered limits keyed to customer ARR, user base, and timezone across India and US clusters; isolated high-ARR enterprise traffic on dedicated partitions and lower-priority events on shared ones.",
+          "sources": [
+            "aie"
+          ]
+        },
+        {
+          "text": "Cut harmful and off-topic responses 28% before production through RLHF-aligned preference datasets and reward-model checkpoints.",
+          "sources": [
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Architected event-driven agentic microservices in Node.js and Kafka to route multi-turn conversations and resolve tool calls.",
+          "sources": [
+            "ai-fde"
+          ]
+        }
+      ],
+      "skills": [
+        "Node.js",
+        "Kafka",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "BERT",
+        "LoRA",
+        "RLHF"
+      ],
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde",
+        "owner"
+      ],
+      "order": 2
+    },
+    {
+      "id": "cognizant",
+      "company": "Cognizant",
+      "role": "Program Trainee Analyst, Full Stack Developer",
+      "employment_type": null,
+      "location": null,
+      "start_date": "2021-03",
+      "end_date": "2021-08",
+      "current": false,
+      "date_review_required": false,
+      "bullets": [
+        {
+          "text": "Cut order-lookup response time from 1.2s to 700ms by decomposing a legacy Java monolith into Spring Boot microservices and REST APIs, holding automated test coverage above 80%.",
+          "sources": [
+            "swe",
+            "fde",
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Improved team velocity 30% during the migration.",
+          "sources": [
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Paired with senior engineers through review and release to land changes in an existing production codebase.",
+          "sources": [
+            "fde"
+          ]
+        }
+      ],
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "REST"
+      ],
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ],
+      "order": 3
+    }
+  ],
+  "education": [
+    {
+      "id": "csusb",
+      "institution": "California State University, San Bernardino",
+      "qualification": "M.S.",
+      "field": "Computer Science",
+      "start_date": "2023-08",
+      "end_date": "2025-05",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "id": "amrita",
+      "institution": "Amrita Vishwa Vidyapeetham, Coimbatore, India",
+      "qualification": "B.Tech",
+      "field": "Computer Science",
+      "start_date": "2017-07",
+      "end_date": "2021-05",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "role-collector",
+      "title": "Job Sourcing Agent",
+      "category": "agents",
+      "repo_url": "https://github.com/Manishrdy/role-collector",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Built an autonomous job-sourcing agent with a 13-node graph workflow discovering postings under 24 hours old across six ATS platforms, then deduplicating and ranking them freshness-first.",
+          "sources": [
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Enforced tool safety with a guarded_url_arg decorator that checks a hard-coded allowlist before execution, blocking login pages, apply forms, and shorteners.",
+          "sources": [
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Built a custom nodriver WebSocket debug-protocol client after Playwright and Puppeteer stealth variants failed against CDP-layer bot detection, with 55 tests and Langfuse tracing.",
+          "sources": [
+            "aie",
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Combined ATS APIs, search, funding-event discovery, company watchlists, and public LinkedIn posts in a discovery and extraction workflow, with exact and semantic duplicate checks before SQLite persistence.",
+          "sources": [
+            "github-role-collector-3",
+            "github-role-collector-12"
+          ]
+        },
+        {
+          "text": "Surfaced results through a FastAPI/Jinja2 review dashboard with freshness buckets and a recent-postings filter.",
+          "sources": [
+            "github-role-collector-3"
+          ]
+        }
+      ],
+      "tags": [
+        "nodriver",
+        "WebSockets",
+        "Langfuse",
+        "Playwright",
+        "Puppeteer",
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "Jinja2",
+        "Ollama",
+        "RapidFuzz",
+        "sentence-transformers"
+      ],
+      "sources": [
+        "aie",
+        "ai-fde",
+        "github-role-collector-3",
+        "github-role-collector-12"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "pending"
+    },
+    {
+      "id": "async-audio-pipeline",
+      "title": "Async Audio Intelligence Pipeline",
+      "category": "ai-ml",
+      "repo_url": "https://github.com/Manishrdy/async-audio-pipeline",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Cut turnaround on a one-hour meeting from 45–75 minutes to 7–11 minutes with a queue-based asynchronous worker backend.",
+          "sources": [
+            "aie",
+            "fde"
+          ]
+        },
+        {
+          "text": "Kept FastAPI focused on accepting jobs and reporting status, with Redis holding queues, job state, and results.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Decoupled Splitter, Transcriber, and Summarizer workers over Redis queues with Whisper and Gemini; used idempotent retries so workers scale horizontally without API or state-layer changes.",
+          "sources": [
+            "swe",
+            "aie",
+            "fde"
+          ]
+        }
+      ],
+      "tags": [
+        "FastAPI",
+        "Redis",
+        "Whisper",
+        "Gemini"
+      ],
+      "sources": [
+        "swe",
+        "aie",
+        "fde"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "approved"
+    },
+    {
+      "id": "simcricketx",
+      "title": "SimCricketX",
+      "category": "web",
+      "repo_url": "https://github.com/Manishrdy/SimCricketX",
+      "live_url": "https://simcricketx.app/",
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Built a Flask cricket simulation platform with a modular REST API and a 13-model SQLAlchemy schema using indexed queries and cascade deletes, running live on OCI.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Served 13,000 active users and resolved a 120-delivery match in under five seconds.",
+          "sources": [
+            "ai-fde",
+            "fde"
+          ]
+        },
+        {
+          "text": "Kept concurrent match state correct using per-match threading locks and a single-worker, multi-thread Gunicorn deployment.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        },
+        {
+          "text": "Built a probabilistic ball-outcome engine over WebSockets, incorporating phase, momentum with 0.88 exponential decay, and pressure, with 80%+ coverage across a six-configuration CI matrix.",
+          "sources": [
+            "swe"
+          ]
+        },
+        {
+          "text": "Engineered a seven-layer game-state momentum engine and a 13-dimensional state vector.",
+          "sources": [
+            "ai-fde"
+          ]
+        },
+        {
+          "text": "Owned architecture, session authentication, Nginx, zero-downtime deployment, and production incident response as the sole engineer.",
+          "sources": [
+            "fde",
+            "ai-fde"
+          ]
+        }
+      ],
+      "tags": [
+        "Flask",
+        "SQLAlchemy",
+        "WebSockets",
+        "Gunicorn",
+        "Nginx",
+        "OCI"
+      ],
+      "sources": [
+        "swe",
+        "fde",
+        "ai-fde"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "approved"
+    },
+    {
+      "id": "piko-contribution",
+      "title": "Piko — Open Source Contribution",
+      "category": "open-source",
+      "repo_url": "https://github.com/Manishrdy/piko",
+      "live_url": null,
+      "contribution_url": "https://github.com/crimera/piko/pull/1741",
+      "bullets": [
+        {
+          "text": "Extended crimera/piko’s recommended-flags system from boolean-only to long-typed MobileConfig overrides, hooking long-returning bytecode accessors and carrying the change through maintainer review.",
+          "sources": [
+            "swe",
+            "fde"
+          ]
+        }
+      ],
+      "tags": [
+        "MobileConfig",
+        "bytecode"
+      ],
+      "sources": [
+        "swe",
+        "fde"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "approved"
+    },
+    {
+      "id": "coldstart",
+      "title": "Coldstart",
+      "category": "data",
+      "repo_url": "https://github.com/Manishrdy/coldstart",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Built a job-matching pipeline that polls changed ATS data, filters postings by role, freshness, location, and eligibility, then routes each candidate to one of four résumé tracks for LLM scoring.",
+          "sources": [
+            "github-coldstart-1",
+            "github-coldstart-9"
+          ]
+        },
+        {
+          "text": "Persisted scoring outcomes and failures in SQLite, with CSV audit exports, a local dashboard, and scheduled email digests guarded against repeat sends after restarts.",
+          "sources": [
+            "github-coldstart-1",
+            "github-coldstart-9"
+          ]
+        },
+        {
+          "text": "Supported local Ollama scoring and configurable hosted providers, with per-provider retries and a daily spending limit.",
+          "sources": [
+            "github-coldstart-1"
+          ]
+        }
+      ],
+      "tags": [
+        "Python",
+        "SQLite",
+        "Pandas",
+        "PyArrow",
+        "Pydantic",
+        "Ollama",
+        "FastAPI"
+      ],
+      "sources": [
+        "github-coldstart-1",
+        "github-coldstart-9"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "pending"
+    },
+    {
+      "id": "job-pulse",
+      "title": "JobPulse",
+      "category": "web",
+      "repo_url": "https://github.com/Manishrdy/job-pulse",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Built a self-hosted job-search dashboard around the vendored jobhive / ats-scrapers library, combining scheduled ingestion with job filtering, application tracking, company blocklists, and analytics.",
+          "sources": [
+            "github-job-pulse-2"
+          ]
+        },
+        {
+          "text": "Used SQLite WAL mode and FTS5 full-text search, with synchronization triggers, application history, and per-run scrape audit records.",
+          "sources": [
+            "github-job-pulse-10"
+          ]
+        },
+        {
+          "text": "Served JSON APIs and an interactive dashboard using FastAPI, Jinja2, and HTMX.",
+          "sources": [
+            "github-job-pulse-2"
+          ]
+        }
+      ],
+      "tags": [
+        "Python",
+        "FastAPI",
+        "SQLite",
+        "FTS5",
+        "Jinja2",
+        "HTMX",
+        "jobhive"
+      ],
+      "sources": [
+        "github-job-pulse-2",
+        "github-job-pulse-10"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "pending"
+    },
+    {
+      "id": "resume-tailor-extension",
+      "title": "Resume Tailor AI",
+      "category": "ai-ml",
+      "repo_url": "https://github.com/Manishrdy/Resume-TailorExtension-Pro",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Built a Manifest V3 Chrome extension that captures job descriptions and sends résumé profiles to a FastAPI backend for tailoring.",
+          "sources": [
+            "github-resume-tailor-4",
+            "github-resume-tailor-13"
+          ]
+        },
+        {
+          "text": "Integrated Google Gemini for keyword extraction and tailored résumé content, with matched/missing keyword feedback and a heuristic compatibility score.",
+          "sources": [
+            "github-resume-tailor-20"
+          ]
+        },
+        {
+          "text": "Generated PDF and editable DOCX documents using Jinja2 templates, WeasyPrint, and python-docx.",
+          "sources": [
+            "github-resume-tailor-21"
+          ]
+        }
+      ],
+      "tags": [
+        "Chrome Manifest V3",
+        "JavaScript",
+        "FastAPI",
+        "Google Gemini",
+        "Jinja2",
+        "WeasyPrint",
+        "python-docx"
+      ],
+      "sources": [
+        "github-resume-tailor-4",
+        "github-resume-tailor-13",
+        "github-resume-tailor-20",
+        "github-resume-tailor-21"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "pending"
+    },
+    {
+      "id": "codemate",
+      "title": "CodeMate",
+      "category": "ai-ml",
+      "repo_url": "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Prepared CodeAlpaca-20k instruction, input, and response examples as JSONL for coding-model fine-tuning.",
+          "sources": [
+            "github-codemate-14"
+          ]
+        },
+        {
+          "text": "Implemented a Gemma fine-tuning notebook using 4-bit loading and PEFT LoRA adapters targeting query and value projections, with gradient accumulation and saved model artifacts.",
+          "sources": [
+            "github-codemate-19"
+          ]
+        }
+      ],
+      "tags": [
+        "Python",
+        "Gemma",
+        "QLoRA",
+        "PEFT",
+        "Transformers",
+        "PyTorch",
+        "CodeAlpaca-20k"
+      ],
+      "sources": [
+        "github-codemate-14",
+        "github-codemate-19"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "pending"
+    },
+    {
+      "id": "ai-driven-resume-builder",
+      "title": "AI-Driven Resume Builder",
+      "category": "cli",
+      "repo_url": "https://github.com/Manishrdy/AI-Driven-Resume-Builder",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Built a Python command-line pipeline that validates structured YAML résumé data, normalizes it to JSON, and tailors content against a job description through the Perplexity API.",
+          "sources": [
+            "github-resume-builder-16",
+            "github-resume-builder-17"
+          ]
+        },
+        {
+          "text": "Generated LaTeX from tailored content and orchestrated PDF/DOCX conversion, collecting output artifacts into a named directory.",
+          "sources": [
+            "github-resume-builder-6",
+            "github-resume-builder-16"
+          ]
+        }
+      ],
+      "tags": [
+        "Python",
+        "PyYAML",
+        "Perplexity API",
+        "sonar-pro",
+        "LaTeX",
+        "XeLaTeX",
+        "pdf2docx"
+      ],
+      "sources": [
+        "github-resume-builder-16",
+        "github-resume-builder-17",
+        "github-resume-builder-6"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "pending"
+    },
+    {
+      "id": "emotion-detector",
+      "title": "Emotion Detector",
+      "category": "ai-ml",
+      "repo_url": "https://github.com/Manishrdy/Emotion-Detector--Text-Based-Emotion-Classification-Using-Machine-Learning",
+      "live_url": null,
+      "contribution_url": null,
+      "bullets": [
+        {
+          "text": "Built a Flask application and prediction API for six emotion classes: sadness, joy, love, anger, fear, and surprise.",
+          "sources": [
+            "github-emotion-detector-18"
+          ]
+        },
+        {
+          "text": "Preprocessed text with NLTK and TF-IDF, returning predictions from Logistic Regression, SVM, and a Keras MLP for comparison.",
+          "sources": [
+            "github-emotion-detector-18"
+          ]
+        }
+      ],
+      "tags": [
+        "Python",
+        "Flask",
+        "NLTK",
+        "TF-IDF",
+        "scikit-learn",
+        "SVM",
+        "TensorFlow",
+        "Keras"
+      ],
+      "sources": [
+        "github-emotion-detector-18"
+      ],
+      "featured": false,
+      "status": "draft",
+      "editorial_status": "pending"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "group": "Languages",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Node.js",
+      "group": "Languages",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "group": "Languages",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Java",
+      "group": "Languages",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Kotlin",
+      "group": "Languages",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "SQL",
+      "group": "Languages",
+      "sources": [
+        "swe",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "FastAPI",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Flask",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Express.js",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Spring Boot",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "REST",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "WebSockets",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "SSE",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "JWT",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "OAuth 2.0",
+      "group": "Backend and APIs",
+      "sources": [
+        "swe",
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "group": "Databases and Messaging",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "group": "Databases and Messaging",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "group": "Databases and Messaging",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Redis",
+      "group": "Databases and Messaging",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Kafka",
+      "group": "Databases and Messaging",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Redis Queues",
+      "group": "Databases and Messaging",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "AWS (EC2, S3, CloudWatch)",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Azure",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "OCI",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Docker",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "GitHub Actions",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Nginx",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Gunicorn",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "swe",
+        "aie"
+      ]
+    },
+    {
+      "name": "RAG",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "LangChain",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "LangGraph",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "FAISS",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "vector search",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "reranking",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "QLoRA/PEFT",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "OpenAI",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "Whisper",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "Gemini",
+      "group": "AI and ML",
+      "sources": [
+        "swe",
+        "fde"
+      ]
+    },
+    {
+      "name": "tool calling",
+      "group": "Agentic systems",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "query planning",
+      "group": "Agentic systems",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "state machines",
+      "group": "Agentic systems",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "multi agent orchestration",
+      "group": "Agentic systems",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "intent classification",
+      "group": "Agentic systems",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "prompt injection guardrails",
+      "group": "Agentic systems",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "LLM as judge",
+      "group": "Agentic systems",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "LangSmith",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Langfuse",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "context relevance",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "recall",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "precision",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "MRR",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "faithfulness checks",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "cross encoder reranking",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "eval harness design",
+      "group": "Evaluation and observability",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "hybrid dense retrieval",
+      "group": "Retrieval",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "parent and child chunking",
+      "group": "Retrieval",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "Qwen3 8B embeddings",
+      "group": "Retrieval",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "sentence transformers",
+      "group": "Retrieval",
+      "sources": [
+        "aie"
+      ]
+    },
+    {
+      "name": "rerankers",
+      "group": "Retrieval",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "citation grounded generation",
+      "group": "Retrieval",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "LoRA",
+      "group": "Fine tuning",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "QLoRA",
+      "group": "Fine tuning",
+      "sources": [
+        "aie"
+      ]
+    },
+    {
+      "name": "PEFT",
+      "group": "Fine tuning",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "BERT",
+      "group": "Fine tuning",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "LLaMA",
+      "group": "Fine tuning",
+      "sources": [
+        "aie"
+      ]
+    },
+    {
+      "name": "4 bit quantization",
+      "group": "Fine tuning",
+      "sources": [
+        "aie"
+      ]
+    },
+    {
+      "name": "SQLite",
+      "group": "Backend and data",
+      "sources": [
+        "aie"
+      ]
+    },
+    {
+      "name": "Graph API tenant isolation",
+      "group": "Auth and security",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "RBAC",
+      "group": "Auth and security",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "prompt injection filtering",
+      "group": "Auth and security",
+      "sources": [
+        "aie"
+      ]
+    },
+    {
+      "name": "PII redaction",
+      "group": "Auth and security",
+      "sources": [
+        "aie",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "event-driven microservices",
+      "group": "Backend and APIs",
+      "sources": [
+        "fde"
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "group": "Cloud and DevOps",
+      "sources": [
+        "fde"
+      ]
+    },
+    {
+      "name": "discovery and scoping",
+      "group": "Customer and Delivery",
+      "sources": [
+        "fde"
+      ]
+    },
+    {
+      "name": "on-site integration",
+      "group": "Customer and Delivery",
+      "sources": [
+        "fde"
+      ]
+    },
+    {
+      "name": "InfoSec and security review",
+      "group": "Customer and Delivery",
+      "sources": [
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "stakeholder demos",
+      "group": "Customer and Delivery",
+      "sources": [
+        "fde"
+      ]
+    },
+    {
+      "name": "onboarding",
+      "group": "Customer and Delivery",
+      "sources": [
+        "fde"
+      ]
+    },
+    {
+      "name": "on-call and incident response",
+      "group": "Customer and Delivery",
+      "sources": [
+        "fde"
+      ]
+    },
+    {
+      "name": "RLHF and RLAIF",
+      "group": "Retrieval and fine tuning",
+      "sources": [
+        "ai-fde"
+      ]
+    },
+    {
+      "name": "CRM and ticketing connectors",
+      "group": "Enterprise integration",
+      "sources": [
+        "ai-fde"
+      ]
+    }
+  ],
+  "review_issues": [
+    {
+      "id": "microsoft-end-date",
+      "entity": "microsoft",
+      "question": "March or April 2026?",
+      "evidence": [
+        "AIE and AI_FDE: March 2026",
+        "SWE and FDE_SWE: April 2026"
+      ],
+      "disposition": "resolved",
+      "resolution": "Owner confirmed April 2026."
+    },
+    {
+      "id": "microsoft-request-period",
+      "entity": "microsoft",
+      "question": "Period for 1.5 million requests?",
+      "evidence": [
+        "AIE and AI_FDE omit the period."
+      ],
+      "disposition": "resolved",
+      "resolution": "Owner confirmed six months."
+    },
+    {
+      "id": "yellow-ai-volume-unit",
+      "entity": "yellow-ai",
+      "question": "Events or conversations?",
+      "evidence": [
+        "SWE/FDE: 100M+ events/day",
+        "AI variants: 100 million daily conversations"
+      ],
+      "disposition": "resolved",
+      "resolution": "Owner confirmed daily product events across all customers; conversation-volume wording removed."
+    },
+    {
+      "id": "resume-builder-content",
+      "entity": "projects",
+      "question": "AI-Driven-Resume-Builder details?",
+      "evidence": [
+        "Named in original plan but absent from all PDFs."
+      ],
+      "disposition": "resolved",
+      "resolution": "Owner supplied the AI-Driven-Resume-Builder repository and authorized repository-backed project drafts; README and implementation inspected."
+    },
+    {
+      "id": "public-resume",
+      "entity": "site_settings",
+      "question": "Which public résumé and presentation?",
+      "evidence": [
+        "Source PDFs include a phone number."
+      ],
+      "disposition": "deferred",
+      "resolution": "Owner requested a dedicated Phase 4 conversation. Public PDF unset; phone omitted from seed."
+    }
+  ]
+}
