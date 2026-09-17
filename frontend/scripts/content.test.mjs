@@ -20,3 +20,16 @@ test('published posts have complete metadata and social artwork',()=>{
  if(data.published)assert.ok(fs.existsSync(`public/posts/${file.replace('.mdx','')}-og.png`));
  }
 });
+test('master and company stories preserve reviewed attribution and join to all jobs',()=>{
+ const master=JSON.parse(fs.readFileSync('content/master-resume.json'));
+ const stories=JSON.parse(fs.readFileSync('content/experience.json'));
+ assert.deepEqual(new Set(master.experience.map(e=>e.id)),new Set(profile.experience.map(e=>e.id)));
+ assert.deepEqual(new Set(stories.map(e=>e.id)),new Set(profile.experience.map(e=>e.id)));
+ assert.match(master.experience.find(e=>e.id==='tradeliv').prototype,/prototype/);
+ assert.match(master.experience.find(e=>e.id==='cognizant').scope,/proof of concept/);
+ const yellow=master.experience.find(e=>e.id==='yellow-ai').bullets.join(' ');
+ assert.match(yellow,/accuracy by 35%/);assert.match(yellow,/rates by 60%/);
+ assert.ok(!JSON.stringify(master).includes('61%'));
+ for(const slug of master.projectSlugs)assert.ok(projects.some(p=>p.slug===slug));
+ for(const story of stories){assert.equal(story.nodes.length,6);for(const slug of story.related)assert.ok(projects.some(p=>p.slug===slug));}
+});

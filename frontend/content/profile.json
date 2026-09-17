@@ -28,21 +28,25 @@
       "endDate": null,
       "current": true,
       "bullets": [
-        "Owned product and engineering as the first hire and sole engineer, taking a B2B SaaS platform from zero to production in four months with 40 REST endpoints, PostgreSQL, and designer, admin, and client access tiers.",
-        "Cut new e-commerce integration time from two days to under 15 minutes by replacing per-site scrapers with a Claude and Puppeteer pipeline that turns product URLs into structured data.",
-        "Ran the stack on one 1GB OCI VM, offloading builds to GitHub Actions and using health-gated cutover with automatic rollback for zero-downtime deployment; owned incidents through customer follow-up.",
-        "Raised semantic retrieval accuracy 36 percent by replacing fixed-size chunking with heading-scoped parent and child chunks across documents above 20 MB."
+        "Delivered a B2B SaaS platform from zero to production in four months, spanning 40+ REST endpoints and designer, administrator and client workflows, by owning product discovery, architecture and full-stack implementation as the first hire and sole engineer.",
+        "Reduced new e-commerce integration time from two days to under 15 minutes by replacing per-site scrapers with a reusable AI-assisted product-extraction pipeline combining browser rendering and structured product parsing.",
+        "Enabled end-to-end procurement across product curation, client approval, checkout and brand-specific purchase orders by implementing the React/TypeScript frontend, Express APIs and PostgreSQL/Prisma data model.",
+        "Enabled clients to review designer shortlists and receive live updates without repeated page refreshes by implementing token-based client portals and scoped server-sent event streams."
       ],
       "skills": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Node.js",
+        "Express",
         "PostgreSQL",
+        "Prisma",
         "Stripe",
-        "SSE",
-        "Claude",
         "Puppeteer",
-        "OCI",
-        "GitHub Actions",
-        "Qwen3 8B embeddings"
-      ]
+        "AI-assisted extraction",
+        "SSE"
+      ],
+      "scope": "First hire and sole engineer; product discovery through full-stack delivery."
     },
     {
       "id": "microsoft",
@@ -52,30 +56,28 @@
       "endDate": "2026-04",
       "current": false,
       "bullets": [
-        "Built a multi-agent orchestration system for field sales across Salesforce, HubSpot, OneDrive, and internal databases on Azure, serving 75,000 daily users and 1.5 million requests over six months.",
-        "Cut contract and document lookup from about 15 minutes to under 30 seconds with an agent backend over Salesforce, HubSpot, OneDrive, and internal SQL.",
-        "Raised retrieval accuracy from 61% to 89% with chunk-level indexing, reranking, and a vector cache in front of the RAG layer.",
-        "Cut per-query inference cost 45% by fine-tuning a smaller model with QLoRA and PEFT and routing simple intents away from the larger model.",
-        "Moved authorization inside the agent loop with Graph API tenant isolation and RBAC per request, restricting retrieval to contracts the requesting persona could access.",
-        "Hardened tool calls with exponential backoff, capped retries, a dead-letter queue, and per-node fallbacks, tracing runs in LangSmith to investigate divergent plans."
+        "Delivered retrieval and orchestration components processing 1.5 million requests over six months within a field-sales agent serving 75,000 daily active users by implementing and extending workflows across CRM, document and SQL data sources on Azure.",
+        "Improved retrieval-context relevance by approximately 30–40% by replacing fixed-size chunks with heading-based parent/child chunks that preserved context across long contract sections.",
+        "Supported new sales-agent use cases while retaining context across tool calls by implementing LangGraph nodes, edges, shared state and routing, and extending the existing orchestration graph.",
+        "Bounded agent planning and tool-execution failure paths with timeouts, capped retries, exponential backoff and fallbacks by implementing explicit controls and dead-letter handling for stalled or unsuccessful runs.",
+        "Delivered an RLHF-trained model into production by implementing reward-model training and the reinforcement-learning stage using human feedback."
       ],
       "skills": [
+        "Python",
         "Azure",
-        "Salesforce",
-        "HubSpot",
-        "OneDrive",
-        "SQL",
-        "Graph API",
-        "RBAC",
-        "OAuth 2.0",
-        "RAG",
-        "QLoRA",
-        "PEFT",
-        "spaCy",
-        "Llama",
+        "LangGraph",
+        "LangChain",
         "LangSmith",
-        "GitHub Actions"
-      ]
+        "PostgreSQL",
+        "SQL",
+        "Pinecone",
+        "BGE/Qwen embeddings",
+        "RAG",
+        "reranking",
+        "RLHF",
+        "CRM integrations"
+      ],
+      "scope": "Owned retrieval, orchestration and reliability components within a team-built field-sales agent. Overall agent: 75,000 daily active users. Owned component/request category: 1.5 million requests over six months."
     },
     {
       "id": "yellow-ai",
@@ -85,23 +87,28 @@
       "endDate": "2023-07",
       "current": false,
       "bullets": [
-        "Delivered conversational-AI systems for 24+ enterprise clients including IHCL, Dr. Reddy’s, Bajaj Finserv, and Spotify, scoping use cases with customer teams.",
-        "Unblocked launches through on-site CRM, ticketing, and data integrations at IHCL, Dr. Reddy’s, and Bajaj Finserv, driving InfoSec approvals on both sides.",
-        "Held 99.9% uptime on the messaging backbone as the product received 100M+ daily events across all customers, owning consumer services and retry paths on a six-engineer platform team.",
-        "Cut p95 API response time from 820ms to 490ms by rewriting MySQL and MongoDB query plans, adding composite indexes, and caching hot reads in Redis.",
-        "Onboarded 50+ enterprise CRM integrations without latency regression through a shared connector interface reused per client.",
-        "Fine-tuned BERT and open-source LLMs with LoRA for intent classification and named entity recognition, lifting chatbot accuracy 60% and CSAT 35%."
+        "Delivered enterprise chatbot solutions for 25+ customers by translating customer requirements into platform features, implementing integrations and coordinating launches with product and customer-success teams.",
+        "Improved intent-classification accuracy by 35% relative to the baseline and reduced unrecognized inputs or fallback rates by 60% in owned components by improving intent/entity handling and adapting open-source models with LoRA.",
+        "Improved CSAT by 35% relative to the baseline by strengthening query routing across FAQs, document knowledge and automated workflows, with nearest-match suggestions and live-agent handoff when required.",
+        "Reduced API response time from 820 ms to 490 ms by optimizing MySQL, PostgreSQL and MongoDB queries and caching hot reads in Redis."
       ],
       "skills": [
         "Node.js",
+        "Python",
         "Kafka",
         "MySQL",
+        "PostgreSQL",
         "MongoDB",
         "Redis",
         "BERT",
+        "spaCy",
         "LoRA",
-        "RLHF"
-      ]
+        "intent classification",
+        "entity recognition",
+        "conversational AI",
+        "CRM integrations"
+      ],
+      "scope": "Backend/services and enterprise delivery for the first nine months, followed by product engineering. Worked with 25+ enterprise customers on a platform encompassing approximately 50 integrations."
     },
     {
       "id": "cognizant",
@@ -111,14 +118,22 @@
       "endDate": "2021-08",
       "current": false,
       "bullets": [
-        "Cut order-lookup response time from 1.2s to 700ms by decomposing a legacy Java monolith into Spring Boot microservices and REST APIs, holding automated test coverage above 80%.",
-        "Improved team velocity 30% during the migration."
+        "Reduced response time from 1.2 seconds to 700 ms in an internal banking proof of concept by helping decompose a Java monolith into four Spring Boot microservices.",
+        "Achieved 85% code coverage in the proof of concept by writing unit tests and carrying out regression, white-box and black-box testing.",
+        "Enabled independent deployment and operational monitoring of four services by deploying them on AWS and configuring CloudWatch monitoring and automated alerts."
       ],
       "skills": [
         "Java",
         "Spring Boot",
-        "REST"
-      ]
+        "Spring MVC",
+        "H2",
+        "MySQL",
+        "AWS EC2",
+        "S3",
+        "Elastic Beanstalk",
+        "CloudWatch"
+      ],
+      "scope": "Internal banking proof of concept in a team delivery environment; hands-on service development, testing, deployment and monitoring."
     }
   ],
   "education": [
@@ -174,15 +189,17 @@
       "items": [
         "LangGraph",
         "LangChain",
-        "RAG",
-        "QLoRA/PEFT",
-        "FAISS",
-        "BERT",
-        "Langfuse",
         "LangSmith",
-        "Qwen3 8B embeddings",
-        "Whisper",
-        "Gemini"
+        "RAG",
+        "Parent/child chunking",
+        "Embeddings",
+        "Reranking",
+        "BERT",
+        "spaCy",
+        "LoRA",
+        "Reward modeling",
+        "RLHF",
+        "Input/output guardrails"
       ]
     },
     {

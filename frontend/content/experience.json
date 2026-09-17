@@ -1,0 +1,179 @@
+[
+  {
+    "id": "microsoft",
+    "title": "Grounding a field-sales agent in the right evidence",
+    "description": "My component-level work on enterprise retrieval, stateful agent workflows and production reliability at Microsoft.",
+    "context": "Field-sales teams needed answers from contracts, CRM records and internal databases that were spread across Salesforce, HubSpot, OneDrive and SQL systems. Retrieving the right passage was only one part of the problem: the agent also needed to maintain context, execute tools reliably and return an answer grounded in the evidence.",
+    "ownership": "I joined an existing team system as a contract software engineer. I implemented new LangGraph use cases and extended existing workflows, with direct work on retrieval, guardrails, failure controls and RLHF. The overall agent served 75,000 daily active users; the component/request category I worked on processed 1.5 million requests over six months.",
+    "sections": [
+      {
+        "title": "Keep document structure in the retrieval context",
+        "paragraphs": [
+          "Long contracts contained headings spanning multiple pages, alongside tables and diagrams. Fixed-size chunks could separate an answer from the context that explained it. I introduced heading-based parent/child chunks so retrieval could find a relevant passage and retain its surrounding section.",
+          "The change improved retrieval-context relevance by approximately 30–40%. For tables and diagrams, I added descriptive metadata in PostgreSQL to complement vector retrieval and connect the answer to supporting evidence."
+        ]
+      },
+      {
+        "title": "Make planning and tool execution bounded",
+        "paragraphs": [
+          "I implemented graph nodes, edges, state and routing for new use cases, and extended existing graph paths. Shared state carried the query and retrieved context through planning, tool use and answer preparation.",
+          "Planning timeouts, capped retries, exponential backoff and fallback paths bounded failures. Stalled or unsuccessful runs could be handed off through dead-letter handling instead of continuing indefinitely. LangSmith traces supported investigation of divergent plans."
+        ]
+      },
+      {
+        "title": "Validate both sides of the response",
+        "paragraphs": [
+          "Input validation, scope checks and prompt-injection checks ran before agent execution; output checks ran before returning a response. Retrieval evaluation used relevance, precision, recall and ranking measures to assess quality.",
+          "I also implemented reward-model training and the reinforcement-learning stage of an RLHF pipeline whose resulting model reached production. The final satisfaction score was approximately 75%, assessed against the first three months of operation; this is a final score, not a 75% increase."
+        ]
+      }
+    ],
+    "tradeoff": "Larger parent sections preserve context but can increase the amount of material passed downstream. Reranking and selective context assembly help keep the answer focused. Bounded retries improve predictability, while explicit failure responses are still necessary when a source or tool remains unavailable.",
+    "diagramTitle": "From a question to a grounded answer",
+    "nodes": [
+      "Question + input checks",
+      "LangGraph plan + state",
+      "CRM / SQL / document tools",
+      "Parent–child retrieval",
+      "Rerank + cite evidence",
+      "Answer + output checks"
+    ],
+    "branch": "Timeouts • capped retries • backoff • fallback / dead-letter handling",
+    "caption": "Conceptual view of the workflows I contributed to. Retrieval combines document vectors with table and diagram metadata; the failure controls apply across planning and tool execution.",
+    "related": [
+      "role-collector",
+      "coldstart"
+    ]
+  },
+  {
+    "id": "yellow-ai",
+    "title": "Connecting enterprise delivery with conversational AI",
+    "description": "Backend engineering, conversational-AI product work and delivery for 25+ enterprise customers at Yellow.ai.",
+    "context": "Enterprise chatbots needed to connect customer workflows, product knowledge and backend systems. A useful conversation could require a FAQ answer, a document lookup, an automated action or a transfer to a live agent. The product also had to handle high-volume messaging workloads.",
+    "ownership": "My first nine months focused on backend/services and enterprise delivery, followed by product engineering. I worked with 25+ enterprise customers in an environment spanning approximately 50 integrations overall. I contributed to both the underlying Dynamic Chat and Zero Setup features and their customer delivery.",
+    "sections": [
+      {
+        "title": "Start with the customer workflow",
+        "paragraphs": [
+          "I worked with customer stakeholders, product and customer-success teams to map requirements to platform features. Before implementation, I explained architecture options, resource needs, cost and delivery-time tradeoffs to director-level stakeholders using accessible diagrams and discussions.",
+          "Customer feedback informed the product work. Dynamic Chat supported goal-oriented LLM conversations, while Zero Setup supported bot setup from website and document knowledge. My role covered implementation and delivery for both."
+        ]
+      },
+      {
+        "title": "Improve intent handling and safe routing",
+        "paragraphs": [
+          "I worked with BERT/spaCy-based NLP and adapted open-source models using LoRA for intent and entity handling. Owned components achieved a 35% relative improvement in intent-classification accuracy and a 60% reduction in unrecognized inputs or fallback rates.",
+          "Queries were routed across FAQs, document knowledge and automated flows. Input validation, output checks, nearest-match suggestions and live-agent handoff provided controls when a reliable automated answer was unavailable. CSAT improved 35% relative to the baseline."
+        ]
+      },
+      {
+        "title": "Support high-volume messaging",
+        "paragraphs": [
+          "The product handled approximately 50–100 million events per day across customers. I refined Kafka partitioning and workload distribution for high-traffic segments such as banking and marketing campaigns.",
+          "I reduced API response time from 820 ms to 490 ms by optimizing queries across MySQL, PostgreSQL and MongoDB and moving hot reads into Redis. The event volume describes the platform; the latency change describes the API work."
+        ]
+      }
+    ],
+    "tradeoff": "Deterministic workflows remain useful when a business process requires a specific action. LLM-driven handling adds flexibility, but confidence checks, bounded fallbacks and human handoff are necessary parts of the experience.",
+    "diagramTitle": "A conversation with several possible paths",
+    "nodes": [
+      "Customer input + checks",
+      "Intent / entity handling",
+      "FAQ + document knowledge",
+      "Automated backend flows",
+      "Output + confidence checks",
+      "Answer or live-agent handoff"
+    ],
+    "branch": "Kafka messaging backbone • SQL / MongoDB • Redis hot reads",
+    "caption": "A conceptual routing flow. Knowledge retrieval and backend actions are alternative paths selected for the query; they are not mandatory sequential calls. Customer discovery and feedback shaped the workflows.",
+    "related": [
+      "async-audio-pipeline",
+      "codemate"
+    ]
+  },
+  {
+    "id": "tradeliv",
+    "title": "Building the product from discovery to procurement",
+    "description": "Solo product and engineering ownership of TradeLiv, a B2B platform for interior-designer sourcing and procurement.",
+    "context": "Interior designers needed a way to collect products from different websites, curate options with clients and turn approved selections into orders. The workflow crossed product data, collaboration, payments and brand-specific fulfillment.",
+    "ownership": "As the first hire and sole engineer, I owned product discovery, architecture and full-stack delivery. The initial platform reached production in four months with 40+ REST endpoints and designer, administrator and client workflows.",
+    "sections": [
+      {
+        "title": "Turn product URLs into usable data",
+        "paragraphs": [
+          "The extraction pipeline combines browser-rendered pages with AI-assisted parsing to produce structured product details. Product variants, pricing, materials and images need a consistent representation before they can enter a shortlist.",
+          "Replacing per-site scrapers reduced new e-commerce integration time from two days to under 15 minutes. The implementation includes a ten-minute result cache, bounded concurrency and explicit extraction error categories. These controls reduce repeated work and make failures easier to diagnose."
+        ]
+      },
+      {
+        "title": "Carry the decision through to an order",
+        "paragraphs": [
+          "Designers curate room-by-room selections and share token-based client portals for review. Scoped server-sent event streams deliver updates without repeated page refreshes.",
+          "Approved selections flow into consolidated orders, Stripe Checkout and webhook processing. Brand-based splitting produces purchase-order records for fulfillment. React and TypeScript provide the interface; Express, PostgreSQL and Prisma support the backend and data model."
+        ]
+      },
+      {
+        "title": "An earlier retrieval experiment",
+        "paragraphs": [
+          "I also explored heading-based parent/child retrieval in a prototype, adapting the approach first implemented at Microsoft. It was an experiment in preserving document context, not part of the current production application.",
+          "The production story here centers on product extraction, client collaboration and procurement. The prototype is kept separate so its status and contribution are clear."
+        ]
+      }
+    ],
+    "tradeoff": "An in-process SSE event bus is a straightforward fit for a single application instance, but does not itself provide cross-instance event distribution. Browser and AI extraction also need limits and explicit failures because external product pages differ in structure and availability.",
+    "diagramTitle": "From a product link to a brand purchase order",
+    "nodes": [
+      "Product URL",
+      "Browser + AI extraction",
+      "Designer shortlist",
+      "Client approval + live updates",
+      "Order + Stripe Checkout",
+      "Brand purchase orders"
+    ],
+    "branch": "Express + PostgreSQL / Prisma • scoped SSE • webhook-driven order updates",
+    "caption": "Conceptual view of the production procurement workflow. The retrieval prototype is intentionally outside this production diagram.",
+    "related": [
+      "coldstart",
+      "simcricketx"
+    ]
+  },
+  {
+    "id": "cognizant",
+    "title": "Learning service boundaries through a banking prototype",
+    "description": "An internal banking proof of concept using Java, Spring Boot, AWS monitoring and automated testing at Cognizant.",
+    "context": "This internal proof of concept explored moving a small banking use case out of a monolithic application into independently deployable services. It was my first professional engineering experience.",
+    "ownership": "I worked within a team delivery environment as a Program Trainee Analyst / Full Stack Developer. The work covered Java service implementation, databases, testing, deployment and monitoring; it was not a live client-system migration.",
+    "sections": [
+      {
+        "title": "Split the use case into four services",
+        "paragraphs": [
+          "I helped decompose the Java application into four Spring Boot microservices, using Spring MVC and H2/MySQL persistence. The proof of concept reduced response time from 1.2 seconds to 700 ms.",
+          "The exercise provided hands-on experience with service boundaries, interfaces and the operational work required when functionality is split across processes."
+        ]
+      },
+      {
+        "title": "Test and observe the result",
+        "paragraphs": [
+          "Unit tests, regression testing, and white-box and black-box testing brought code coverage to 85%. Testing was part of evaluating the migration rather than a separate afterthought.",
+          "I deployed services using AWS infrastructure including EC2, S3 and Elastic Beanstalk, and configured CloudWatch monitoring and automated alerts. The emphasis was learning disciplined implementation and operational practices in a corporate environment."
+        ]
+      }
+    ],
+    "tradeoff": "Four services can be deployed independently, but they also introduce more interfaces and operational moving parts. The proof of concept was a bounded way to learn those tradeoffs before treating service decomposition as an automatic improvement.",
+    "diagramTitle": "An internal migration proof of concept",
+    "nodes": [
+      "Banking monolith",
+      "Four Spring Boot services",
+      "REST interfaces",
+      "H2 / MySQL persistence",
+      "AWS deployment",
+      "CloudWatch + alerts"
+    ],
+    "branch": "Unit • regression • white-box • black-box testing → 85% coverage",
+    "caption": "Conceptual decomposition and operational flow. Individual service names are omitted because they have not been confirmed. This represents an internal proof of concept.",
+    "related": [
+      "simcricketx",
+      "async-audio-pipeline"
+    ]
+  }
+]
