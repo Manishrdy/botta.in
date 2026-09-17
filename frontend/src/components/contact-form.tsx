@@ -1,0 +1,10 @@
+'use client';
+import {useState} from 'react';
+import {Mail,Copy,Check} from 'lucide-react';
+export function ContactForm({email}:{email:string}){
+ const [name,setName]=useState('');const [subject,setSubject]=useState('');const [message,setMessage]=useState('');const [status,setStatus]=useState('');
+ const body=`Hi Manish,\n\n${message}\n\nBest,\n${name}`;
+ function submit(e:React.FormEvent){e.preventDefault();window.location.href=`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;setStatus('Email draft opened. Review and send it in your email app. If nothing opened, copy the message and email me directly.')}
+ async function copy(){try{await navigator.clipboard.writeText(`To: ${email}\nSubject: ${subject}\n\n${body}`);setStatus('Message copied. Paste it into your email app when you’re ready.')}catch{setStatus('Clipboard access is unavailable. Select the text in the fields to copy it.')}}
+ return <form className="contact-form" onSubmit={submit}><h2>Start a conversation</h2><label htmlFor="contact-name">Your name</label><input id="contact-name" name="name" autoComplete="name" required maxLength={100} value={name} onChange={e=>setName(e.target.value)} placeholder="Your name"/><label htmlFor="contact-subject">What’s on your mind?</label><input id="contact-subject" name="subject" required maxLength={150} value={subject} onChange={e=>setSubject(e.target.value)} placeholder="A role, a project, a good question…"/><label htmlFor="contact-message">Message</label><textarea id="contact-message" name="message" required maxLength={2500} value={message} onChange={e=>setMessage(e.target.value)} placeholder="Tell me a little about it."/><div className="form-buttons"><button type="submit" className="button primary"><Mail size={15}/>Open email draft</button><button className="button secondary" type="button" onClick={copy}>{status.startsWith('Message copied')?<Check size={15}/>:<Copy size={15}/>}Copy message</button></div><p className="form-note">This opens your email app. Nothing is sent or stored by this website.</p>{status&&<p className="form-status" role="status">{status}</p>}</form>
+}

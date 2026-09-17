@@ -1,0 +1,382 @@
+[
+  {
+    "slug": "coldstart",
+    "title": "Coldstart",
+    "category": "Data & systems",
+    "tagline": "A job-search pipeline that does the legwork.",
+    "description": "Changed-feed ingestion, resume-aware LLM scoring, and an auditable daily digest. Built to run unattended.",
+    "problem": "Job feeds contain far more postings than one person can use. Freshness, location, eligibility, and fit all matter, but evaluating every raw record with an LLM is slow and expensive.",
+    "approach": [
+      "Poll the upstream manifest and download changed ATS slices. Apply deterministic title, company, freshness, location, and eligibility filters before scoring.",
+      "Route surviving jobs to one of four resume tracks. Score with a configured hosted model or local Ollama, and retain outcomes and failure details in SQLite.",
+      "Export a CSV audit trail and send a scheduled digest. Persist the email-send guard so restarting the daemon does not repeat the day’s digest."
+    ],
+    "flow": [
+      "Changed feeds",
+      "Filter & dedupe",
+      "Resume routing",
+      "LLM scoring",
+      "SQLite & digest"
+    ],
+    "outcome": "A complete local workflow from public ATS data to a ranked review surface, with explicit spending limits, retry behavior, and an audit trail.",
+    "tradeoff": "Deterministic filters do the inexpensive work first. Model scoring is reserved for postings that survive those gates; uncertain location data is retained rather than silently discarded.",
+    "featured": true,
+    "tags": [
+      "Python",
+      "SQLite",
+      "Pandas",
+      "PyArrow",
+      "Pydantic",
+      "Ollama",
+      "FastAPI"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/coldstart",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": [
+      "https://github.com/Manishrdy/coldstart/blob/main/README.md",
+      "https://github.com/Manishrdy/coldstart/blob/main/src/coldstart/pipeline.py"
+    ]
+  },
+  {
+    "slug": "role-collector",
+    "title": "Role Collector",
+    "category": "Agents",
+    "tagline": "Find the opening before it gets buried.",
+    "description": "An autonomous discovery agent spanning ATS APIs, search, and company watchlists, with freshness-first review.",
+    "problem": "A useful job-sourcing system needs more than a list of career pages. It must discover openings across sources, extract inconsistent pages, recognize duplicates, and preserve when a posting was actually observed.",
+    "approach": [
+      "Combine ATS API discovery, targeted search, funding events, company watchlists, and public LinkedIn posts in a node-based workflow.",
+      "Extract through an ATS parser, JSON-LD, DOM parsing, and optional LLM fallback. Normalize timestamps and keep source metadata alongside each job.",
+      "Check exact idempotency and semantic similarity before persistence. Surface results in a FastAPI/Jinja2 dashboard with freshness buckets and filters."
+    ],
+    "flow": [
+      "Discover URLs",
+      "Extract & normalize",
+      "Exact dedupe",
+      "Semantic checks",
+      "Freshness-first review"
+    ],
+    "outcome": "An end-to-end discovery, extraction, storage, and review workflow across six ATS connectors, with configurable Langfuse tracing.",
+    "tradeoff": "Freshness is explicit data, not a guess based on sort order. Source timestamps and first-observed timestamps remain separate, including an unknown bucket when neither supports a confident claim.",
+    "featured": true,
+    "tags": [
+      "nodriver",
+      "WebSockets",
+      "Langfuse",
+      "Playwright",
+      "Puppeteer",
+      "Python",
+      "FastAPI",
+      "SQLite",
+      "Jinja2",
+      "Ollama",
+      "RapidFuzz",
+      "sentence-transformers"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/role-collector",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": [
+      "https://github.com/Manishrdy/role-collector/blob/main/README.md",
+      "https://github.com/Manishrdy/role-collector/blob/main/src/job_agent/graph/nodes.py"
+    ]
+  },
+  {
+    "slug": "simcricketx",
+    "title": "SimCricketX",
+    "category": "Web & backend",
+    "tagline": "A cricket match, modeled ball by ball.",
+    "description": "A probabilistic simulation engine with live match state, built and operated as a complete solo project.",
+    "problem": "A cricket simulation needs plausible outcomes and consistent match state. Concurrent requests must not apply the same delivery twice or leave different clients looking at different games.",
+    "approach": [
+      "Model ball outcomes using match phase, momentum, and pressure. Send live state changes over WebSockets.",
+      "Build a modular Flask REST API backed by a 13-model SQLAlchemy schema with indexed queries and cascade deletes.",
+      "Use per-match threading locks and a single-worker, multi-thread Gunicorn deployment to keep in-memory state coherent. Operate it on OCI behind Nginx."
+    ],
+    "flow": [
+      "Match state",
+      "Probability engine",
+      "Delivery outcome",
+      "State update",
+      "WebSocket clients"
+    ],
+    "outcome": "Served 13,000 active users and resolved a 120-delivery match in under five seconds.",
+    "tradeoff": "A single worker simplifies shared match-state correctness. Per-match locks protect updates, at the cost of limiting scale to that process until state is moved behind a shared coordination layer.",
+    "featured": true,
+    "tags": [
+      "Flask",
+      "SQLAlchemy",
+      "WebSockets",
+      "Gunicorn",
+      "Nginx",
+      "OCI"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/SimCricketX",
+    "liveUrl": "https://simcricketx.app/",
+    "contributionUrl": null,
+    "sources": []
+  },
+  {
+    "slug": "async-audio-pipeline",
+    "title": "Async Audio Pipeline",
+    "category": "AI & ML",
+    "tagline": "Long recordings. Shorter waiting.",
+    "description": "Independent transcription and summarization workers behind a lightweight FastAPI job interface.",
+    "problem": "Processing a long recording inside an API request ties the caller to the slowest stage. Splitting, transcription, and summarization have different compute needs and failure modes.",
+    "approach": [
+      "Let FastAPI accept a job, return its ID, and report progress. Keep queues, job state, and results in Redis.",
+      "Separate the Splitter, Transcriber, and Summarizer into independent workers using Whisper and Gemini.",
+      "Use idempotent retries so a failed task can be retried without requiring the client to restart the whole workflow."
+    ],
+    "flow": [
+      "FastAPI job",
+      "Redis queue",
+      "Split",
+      "Whisper transcription",
+      "Gemini summary"
+    ],
+    "outcome": "Reduced turnaround for a one-hour meeting from 45–75 minutes to 7–11 minutes.",
+    "tradeoff": "The API remains responsive while worker capacity can scale independently. The queue and job-state model become critical infrastructure and must preserve retry semantics.",
+    "featured": false,
+    "tags": [
+      "FastAPI",
+      "Redis",
+      "Whisper",
+      "Gemini"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/async-audio-pipeline",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": []
+  },
+  {
+    "slug": "job-pulse",
+    "title": "JobPulse",
+    "category": "Web & backend",
+    "tagline": "One place for the whole job search.",
+    "description": "A self-hosted dashboard for fresh jobs, application tracking, company blocklists, and search analytics.",
+    "problem": "Finding openings and keeping track of applications often happen in disconnected tools. A small self-hosted application can unify those workflows without needing a large infrastructure footprint.",
+    "approach": [
+      "Build on the vendored jobhive / ats-scrapers library, scheduling ingestion and normalizing results into a local SQLite database.",
+      "Use WAL mode, FTS5 full-text search, and synchronization triggers. Preserve application history separately from the expiring job feed.",
+      "Serve JSON endpoints and an interactive FastAPI, Jinja2, and HTMX interface for browsing, applying, filtering, and reviewing scrape logs."
+    ],
+    "flow": [
+      "ATS scrapers",
+      "Ingestion",
+      "SQLite + FTS5",
+      "FastAPI",
+      "HTMX dashboard"
+    ],
+    "outcome": "A cohesive self-hosted workflow for job discovery and application tracking, with per-run audit records and a searchable feed.",
+    "tradeoff": "SQLite and server-rendered interactions keep the application small. The project builds on an existing scraper library rather than claiming every connector as original work.",
+    "featured": false,
+    "tags": [
+      "Python",
+      "FastAPI",
+      "SQLite",
+      "FTS5",
+      "Jinja2",
+      "HTMX",
+      "jobhive"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/job-pulse",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": [
+      "https://github.com/Manishrdy/job-pulse/blob/main/README.md",
+      "https://github.com/Manishrdy/job-pulse/blob/main/jobpulse/database.py"
+    ]
+  },
+  {
+    "slug": "resume-tailor-extension",
+    "title": "Resume Tailor AI",
+    "category": "AI & ML",
+    "tagline": "From the job page to a tailored resume.",
+    "description": "A Chrome extension and FastAPI service that turn job context into tailored PDF and DOCX documents.",
+    "problem": "Tailoring a resume usually means moving between the job description, a document editor, and export tools. The extension keeps the entry point on the job page.",
+    "approach": [
+      "Capture job descriptions through a Manifest V3 Chrome extension and send structured resume profiles to a FastAPI backend.",
+      "Use Google Gemini to extract keywords and suggest tailored resume content. Return matched and missing keywords with a heuristic compatibility score.",
+      "Render PDF documents from Jinja2 templates through WeasyPrint, and editable Word documents through python-docx."
+    ],
+    "flow": [
+      "Job page",
+      "Chrome extension",
+      "FastAPI + Gemini",
+      "Template rendering",
+      "PDF / DOCX"
+    ],
+    "outcome": "An integrated capture, tailoring, and document-generation workflow with reviewable AI output.",
+    "tradeoff": "The compatibility score is keyword feedback, not a guarantee of passing an employer’s ATS. AI suggestions still need factual review before sending a resume.",
+    "featured": false,
+    "tags": [
+      "Chrome Manifest V3",
+      "JavaScript",
+      "FastAPI",
+      "Google Gemini",
+      "Jinja2",
+      "WeasyPrint",
+      "python-docx"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/Resume-TailorExtension-Pro",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": [
+      "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/README.md",
+      "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/extension/manifest.json",
+      "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/backend/src/services/gemini.py",
+      "https://github.com/Manishrdy/Resume-TailorExtension-Pro/blob/main/backend/src/services/template_document_generator.py"
+    ]
+  },
+  {
+    "slug": "codemate",
+    "title": "CodeMate",
+    "category": "AI & ML",
+    "tagline": "A hands-on coding-model fine-tuning study.",
+    "description": "A Gemma and QLoRA experiment, from instruction-dataset preparation to saved adapter artifacts.",
+    "problem": "Adapting a general language model to coding tasks needs a reproducible path from instruction examples to training artifacts. Parameter-efficient fine-tuning makes that workflow more approachable.",
+    "approach": [
+      "Convert CodeAlpaca-20k instruction, input, and response examples into consistent JSONL training records.",
+      "Load Gemma in 4-bit precision and configure PEFT LoRA adapters on query and value projections.",
+      "Use gradient accumulation during training and save the model and tokenizer artifacts for subsequent inference experiments."
+    ],
+    "flow": [
+      "CodeAlpaca-20k",
+      "JSONL examples",
+      "4-bit Gemma",
+      "LoRA adapters",
+      "Saved artifacts"
+    ],
+    "outcome": "A reproducible workflow for parameter-efficient Gemma fine-tuning on code instruction data.",
+    "tradeoff": "Parameter-efficient fine-tuning reduces training memory requirements while keeping the base model frozen. Training data quality and evaluation remain essential to useful coding assistance.",
+    "featured": false,
+    "tags": [
+      "Python",
+      "Gemma",
+      "QLoRA",
+      "PEFT",
+      "Transformers",
+      "PyTorch",
+      "CodeAlpaca-20k"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": [
+      "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/blob/main/fine_tune/prepare_codealpaca_dataset.py",
+      "https://github.com/Manishrdy/CodeMate--A-Fine-Tuned-LLM---RAG-Powered-Coding-Assistant/blob/main/CodeMate_FineTuning_Gemma_QLoRA.ipynb"
+    ]
+  },
+  {
+    "slug": "ai-driven-resume-builder",
+    "title": "AI-Driven Resume Builder",
+    "category": "Developer tools",
+    "tagline": "Structured content in. Application-ready files out.",
+    "description": "A Python CLI that combines YAML resume data, LLM tailoring, and LaTeX document generation.",
+    "problem": "A resume is easier to reuse when its content is structured separately from its layout. The challenge is carrying that structure through job-specific tailoring and repeatable document output.",
+    "approach": [
+      "Validate YAML resume data and normalize it into JSON before passing it through the rest of the pipeline.",
+      "Use the job description and Perplexity API to tailor the structured content.",
+      "Fill a LaTeX template, orchestrate PDF/DOCX conversion, and collect the generated artifacts into a named output directory."
+    ],
+    "flow": [
+      "YAML",
+      "Validated JSON",
+      "Perplexity tailoring",
+      "LaTeX template",
+      "Document artifacts"
+    ],
+    "outcome": "A command-line workflow that separates resume content, tailoring, and document formatting into explicit stages.",
+    "tradeoff": "LaTeX gives strong layout control but brings platform-specific tooling. The repository documents Windows/MikTeX PDF generation and manual compilation on macOS.",
+    "featured": false,
+    "tags": [
+      "Python",
+      "PyYAML",
+      "Perplexity API",
+      "sonar-pro",
+      "LaTeX",
+      "XeLaTeX",
+      "pdf2docx"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/AI-Driven-Resume-Builder",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": [
+      "https://github.com/Manishrdy/AI-Driven-Resume-Builder/blob/main/main.py",
+      "https://github.com/Manishrdy/AI-Driven-Resume-Builder/blob/main/scripts/enhanceResumeWithAPI.py",
+      "https://github.com/Manishrdy/AI-Driven-Resume-Builder/blob/main/README.md"
+    ]
+  },
+  {
+    "slug": "emotion-detector",
+    "title": "Emotion Detector",
+    "category": "AI & ML",
+    "tagline": "Different models. One sentence.",
+    "description": "A text-classification application comparing classical ML and neural predictions across six emotions.",
+    "problem": "Text emotion classification is a useful way to compare modeling choices on the same input. A small application makes the differences between model predictions inspectable.",
+    "approach": [
+      "Normalize input with NLTK tokenization, stop-word removal, and lemmatization, then transform it into TF-IDF features.",
+      "Run Logistic Regression, SVM, and a Keras MLP to classify sadness, joy, love, anger, fear, or surprise.",
+      "Expose predictions through a Flask web interface and a JSON prediction API."
+    ],
+    "flow": [
+      "Text input",
+      "NLTK preprocessing",
+      "TF-IDF",
+      "Three classifiers",
+      "Emotion comparison"
+    ],
+    "outcome": "An interactive model-comparison interface backed by saved vectorizer and model artifacts.",
+    "tradeoff": "The three model outputs are comparisons, not calibrated confidence estimates. This case study avoids repeating evaluation scores that were not independently reproduced.",
+    "featured": false,
+    "tags": [
+      "Python",
+      "Flask",
+      "NLTK",
+      "TF-IDF",
+      "scikit-learn",
+      "SVM",
+      "TensorFlow",
+      "Keras"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/Emotion-Detector--Text-Based-Emotion-Classification-Using-Machine-Learning",
+    "liveUrl": null,
+    "contributionUrl": null,
+    "sources": [
+      "https://github.com/Manishrdy/Emotion-Detector--Text-Based-Emotion-Classification-Using-Machine-Learning/blob/main/app.py"
+    ]
+  },
+  {
+    "slug": "piko-contribution",
+    "title": "Piko contribution",
+    "category": "Open source",
+    "tagline": "A small change, through the whole review path.",
+    "description": "Extending recommended flags from booleans to long-typed MobileConfig overrides in an existing codebase.",
+    "problem": "Piko’s recommended-flags mechanism handled boolean values. Supporting long-valued MobileConfig flags required a change that fit the project’s existing bytecode patching approach.",
+    "approach": [
+      "Extend the recommended-flags system to carry long-typed overrides.",
+      "Hook long-returning accessors in bytecode, preserving the surrounding patching flow.",
+      "Carry the contribution through maintainer review in the upstream project."
+    ],
+    "flow": [
+      "Flag definition",
+      "Typed override",
+      "Bytecode accessor",
+      "Patch behavior",
+      "Maintainer review"
+    ],
+    "outcome": "An upstream contribution recorded in PR #1741, with the implementation and review available in the public repository.",
+    "tradeoff": "Contributing within an established project means respecting its abstractions and maintenance constraints, not just making a local change work.",
+    "featured": false,
+    "tags": [
+      "MobileConfig",
+      "bytecode"
+    ],
+    "repoUrl": "https://github.com/Manishrdy/piko",
+    "liveUrl": null,
+    "contributionUrl": "https://github.com/crimera/piko/pull/1741",
+    "sources": []
+  }
+]

@@ -1,23 +1,46 @@
-resume/
+# Local source resumes and planning/preferences
+/resume/
+/.preference/
 *.md
 !readme.md
-/.preference/
 !PORTFOLIO_BUILD_PLAN.md
-.DS_Store
-.venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.ruff_cache/
-*.egg-info/
+
+# Environment configuration and local databases
 .env
 .env.*
 !.env.example
 *.db
 *.db-*
 *.sqlite*
+
+# Python environments and caches
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# JavaScript dependencies and generated website output
 node_modules/
 .next/
+/frontend/out/
+*.tsbuildinfo
+
+# Test output and local tooling
 coverage/
+/frontend/test-results/
+/frontend/playwright-report/
+/frontend/blob-report/
+.vercel/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS and temporary files
+.DS_Store
 /tmp/
 /backups/

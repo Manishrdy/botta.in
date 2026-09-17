@@ -1,0 +1,220 @@
+{
+  "name": "Manish Botta",
+  "firstName": "Manish",
+  "location": "San Francisco, CA",
+  "email": "manish.botta@hotmail.com",
+  "github": "https://github.com/Manishrdy",
+  "githubUsername": "Manishrdy",
+  "linkedin": "https://linkedin.com/in/manish-reddyb",
+  "headline": "Backend depth.\nAI in production.",
+  "intro": "I build the systems behind the product. From retrieval agents for Microsoft’s field sales teams to a B2B platform built from the ground up, I take software from the first question to production.",
+  "roleInterests": [
+    "Software engineering",
+    "AI engineering",
+    "Forward-deployed engineering",
+    "Forward-deployed AI"
+  ],
+  "bio": [
+    "I’m a software engineer based in San Francisco. My work lives where backend engineering, applied AI, and real customer problems meet.",
+    "I’ve built retrieval and agent systems inside Microsoft’s sales organization, worked with enterprise teams at Yellow.ai, and owned product and engineering for TradeLiv as its first and sole engineer.",
+    "I enjoy the parts that make a system useful beyond a demo: permission checks, thoughtful data models, reliable queues, and a clear path from a customer’s problem to something they can use. I’m comfortable moving between architecture, implementation, and the conversations that shape both."
+  ],
+  "experience": [
+    {
+      "id": "tradeliv",
+      "company": "TradeLiv",
+      "role": "Founding Software Engineer (product and engineering)",
+      "startDate": "2026-04",
+      "endDate": null,
+      "current": true,
+      "bullets": [
+        "Owned product and engineering as the first hire and sole engineer, taking a B2B SaaS platform from zero to production in four months with 40 REST endpoints, PostgreSQL, and designer, admin, and client access tiers.",
+        "Cut new e-commerce integration time from two days to under 15 minutes by replacing per-site scrapers with a Claude and Puppeteer pipeline that turns product URLs into structured data.",
+        "Ran the stack on one 1GB OCI VM, offloading builds to GitHub Actions and using health-gated cutover with automatic rollback for zero-downtime deployment; owned incidents through customer follow-up.",
+        "Raised semantic retrieval accuracy 36 percent by replacing fixed-size chunking with heading-scoped parent and child chunks across documents above 20 MB."
+      ],
+      "skills": [
+        "PostgreSQL",
+        "Stripe",
+        "SSE",
+        "Claude",
+        "Puppeteer",
+        "OCI",
+        "GitHub Actions",
+        "Qwen3 8B embeddings"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "company": "Microsoft",
+      "role": "Software Engineer (Contract)",
+      "startDate": "2025-08",
+      "endDate": "2026-04",
+      "current": false,
+      "bullets": [
+        "Built a multi-agent orchestration system for field sales across Salesforce, HubSpot, OneDrive, and internal databases on Azure, serving 75,000 daily users and 1.5 million requests over six months.",
+        "Cut contract and document lookup from about 15 minutes to under 30 seconds with an agent backend over Salesforce, HubSpot, OneDrive, and internal SQL.",
+        "Raised retrieval accuracy from 61% to 89% with chunk-level indexing, reranking, and a vector cache in front of the RAG layer.",
+        "Cut per-query inference cost 45% by fine-tuning a smaller model with QLoRA and PEFT and routing simple intents away from the larger model.",
+        "Moved authorization inside the agent loop with Graph API tenant isolation and RBAC per request, restricting retrieval to contracts the requesting persona could access.",
+        "Hardened tool calls with exponential backoff, capped retries, a dead-letter queue, and per-node fallbacks, tracing runs in LangSmith to investigate divergent plans."
+      ],
+      "skills": [
+        "Azure",
+        "Salesforce",
+        "HubSpot",
+        "OneDrive",
+        "SQL",
+        "Graph API",
+        "RBAC",
+        "OAuth 2.0",
+        "RAG",
+        "QLoRA",
+        "PEFT",
+        "spaCy",
+        "Llama",
+        "LangSmith",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "id": "yellow-ai",
+      "company": "Yellow.ai",
+      "role": "Software Engineer",
+      "startDate": "2021-09",
+      "endDate": "2023-07",
+      "current": false,
+      "bullets": [
+        "Delivered conversational-AI systems for 24+ enterprise clients including IHCL, Dr. Reddy’s, Bajaj Finserv, and Spotify, scoping use cases with customer teams.",
+        "Unblocked launches through on-site CRM, ticketing, and data integrations at IHCL, Dr. Reddy’s, and Bajaj Finserv, driving InfoSec approvals on both sides.",
+        "Held 99.9% uptime on the messaging backbone as the product received 100M+ daily events across all customers, owning consumer services and retry paths on a six-engineer platform team.",
+        "Cut p95 API response time from 820ms to 490ms by rewriting MySQL and MongoDB query plans, adding composite indexes, and caching hot reads in Redis.",
+        "Onboarded 50+ enterprise CRM integrations without latency regression through a shared connector interface reused per client.",
+        "Fine-tuned BERT and open-source LLMs with LoRA for intent classification and named entity recognition, lifting chatbot accuracy 60% and CSAT 35%."
+      ],
+      "skills": [
+        "Node.js",
+        "Kafka",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "BERT",
+        "LoRA",
+        "RLHF"
+      ]
+    },
+    {
+      "id": "cognizant",
+      "company": "Cognizant",
+      "role": "Program Trainee Analyst, Full Stack Developer",
+      "startDate": "2021-03",
+      "endDate": "2021-08",
+      "current": false,
+      "bullets": [
+        "Cut order-lookup response time from 1.2s to 700ms by decomposing a legacy Java monolith into Spring Boot microservices and REST APIs, holding automated test coverage above 80%.",
+        "Improved team velocity 30% during the migration."
+      ],
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "REST"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "csusb",
+      "institution": "California State University, San Bernardino",
+      "qualification": "M.S.",
+      "field": "Computer Science",
+      "start_date": "2023-08",
+      "end_date": "2025-05",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    },
+    {
+      "id": "amrita",
+      "institution": "Amrita Vishwa Vidyapeetham, Coimbatore, India",
+      "qualification": "B.Tech",
+      "field": "Computer Science",
+      "start_date": "2017-07",
+      "end_date": "2021-05",
+      "sources": [
+        "swe",
+        "aie",
+        "fde",
+        "ai-fde"
+      ]
+    }
+  ],
+  "skillGroups": [
+    {
+      "title": "Backend & systems",
+      "items": [
+        "Python",
+        "TypeScript",
+        "Java",
+        "FastAPI",
+        "Flask",
+        "Node.js",
+        "Spring Boot",
+        "PostgreSQL",
+        "Redis",
+        "Kafka",
+        "WebSockets",
+        "SSE"
+      ]
+    },
+    {
+      "title": "AI & retrieval",
+      "items": [
+        "LangGraph",
+        "LangChain",
+        "RAG",
+        "QLoRA/PEFT",
+        "FAISS",
+        "BERT",
+        "Langfuse",
+        "LangSmith",
+        "Qwen3 8B embeddings",
+        "Whisper",
+        "Gemini"
+      ]
+    },
+    {
+      "title": "Data & delivery",
+      "items": [
+        "MySQL",
+        "MongoDB",
+        "SQLite",
+        "Azure",
+        "AWS",
+        "OCI",
+        "Docker",
+        "GitHub Actions",
+        "Nginx",
+        "OAuth 2.0",
+        "RBAC"
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "title": "Start with the real workflow",
+      "text": "Talk to the people using the system. Understand their constraints before committing to an architecture."
+    },
+    {
+      "title": "Make the failure paths work",
+      "text": "Retries, permissions, observability, and recovery belong in the design from the beginning."
+    },
+    {
+      "title": "Own the last mile",
+      "text": "Deployment, integrations, documentation, and production support are part of building the product."
+    }
+  ],
+  "hiringIntro": "I’m looking for software engineering, AI engineering, and forward-deployed roles across software and AI. I bring backend depth, production AI experience, and ownership from customer discovery through delivery."
+}

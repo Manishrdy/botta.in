@@ -1,0 +1,54 @@
+---
+title: "Filter before you ask the model"
+description: "How Coldstart separates cheap decisions from expensive ones in a job-matching pipeline."
+date: "2026-09-17"
+tags: ["AI engineering", "Data pipelines"]
+published: true
+---
+A job-matching pipeline looks simple until it meets a real feed. There are old postings, mismatched locations, duplicate records, and jobs that cannot fit the candidate. Sending every record to a language model makes the expensive part of the system responsible for decisions that often need no model at all.
+
+[Coldstart](/projects/coldstart/) puts those decisions in a deliberate order. This is a note on the architecture in its repository, rather than a new benchmark of its performance.
+
+## Put deterministic gates first
+
+The pipeline starts from an upstream manifest. A changed slice is downloaded and verified, then passed through title, company, freshness, location, and eligibility filters. Deduplication happens before resume routing and scoring.
+
+The important separation is between **a posting that should not be scored** and **a posting the model has judged to be a weak match**. Both might disappear from a prominent results list, but they are different decisions with different costs and explanations.
+
+A simplified view of the workflow:
+
+```text
+changed ATS slice
+  → title and company filters
+  → freshness, location, eligibility
+  → deduplicate
+  → choose resume track
+  → model score
+  → persist outcome
+```
+
+This ordering also creates useful places to measure the system. How much did each filter remove? Which rule excluded a posting? Where did a failure happen? An opaque end-to-end prompt cannot answer those questions as clearly.
+
+## Unknown is a real state
+
+A missing posting date does not prove a posting is old. An ambiguous location does not prove it is outside the target region. Coldstart preserves uncertainty instead of turning every incomplete record into a rejection.
+
+That choice means some extra records can reach the scoring stage. It also means the pipeline is less likely to hide a valid opportunity because a source omitted a field.
+
+The policy needs to be explicit. Silently interpreting `null` as a failed condition makes the output look cleaner while making the system harder to trust.
+
+## Make outcomes inspectable
+
+The pipeline stores outcomes in SQLite and exports a CSV audit trail. Filters, routing decisions, scoring failures, and delivery failures have distinct places in the operational record.
+
+The daily digest is a view over that state, not the only surviving artifact of the run. When a digest looks unexpectedly sparse, the underlying data provides a way to investigate whether the cause was upstream freshness, a filter, an API failure, or genuinely few relevant jobs.
+
+## Keep cost controls close to calls
+
+A daily spending limit and same-provider retries are part of the scoring path. These controls belong near the point where cost is incurred; a scheduled report after the run is too late to stop it.
+
+The general principle is straightforward: make inexpensive decisions explicitly, preserve uncertainty, and leave a trail that explains what the expensive stage actually did.
+
+## Source
+
+The current implementation and operational details are in the [Coldstart repository](https://github.com/Manishrdy/coldstart). Start with the README and `src/coldstart/pipeline.py`.

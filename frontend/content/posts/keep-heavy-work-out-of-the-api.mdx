@@ -1,0 +1,58 @@
+---
+title: "Keep the heavy work out of the request"
+description: "A queue-based design for splitting, transcribing, and summarizing long recordings."
+date: "2026-09-17"
+tags: ["Backend engineering", "Systems"]
+published: true
+---
+An hour-long recording is a poor fit for a single HTTP request. The work includes different stages, each with its own resource needs and ways to fail. Treating the entire process as one operation makes the caller wait for all of them.
+
+The [Async Audio Pipeline](/projects/async-audio-pipeline/) separates accepting work from doing work. FastAPI receives the job and exposes its status. Redis holds queues, job state, and results. Independent workers perform splitting, transcription, and summarization.
+
+## Give the API a smaller job
+
+The API should accept valid work and return a job identifier. That identifier is the stable handle the caller uses to check progress and retrieve the result.
+
+The interface does not need to know how many transcription workers are running. It needs a reliable answer to a smaller set of questions: was the job accepted, what state is it in, and is the result available?
+
+This boundary keeps the HTTP layer from becoming the scheduler, compute worker, and state store at the same time.
+
+## Separate stages with different constraints
+
+The pipeline has three worker roles:
+
+- **Splitter:** prepare the recording for downstream processing.
+- **Transcriber:** use Whisper to turn audio into text.
+- **Summarizer:** use Gemini to turn the transcript into a summary.
+
+Separating the stages makes capacity a more targeted decision. Adding transcription capacity does not require changing the public API or duplicating all of the orchestration logic.
+
+```text
+client → FastAPI → job ID
+                   │
+               Redis queues
+                   │
+        Splitter → Transcriber → Summarizer
+                   │
+              state and results
+```
+
+This diagram describes the responsibilities of the components; it is not a promise that every recording has the same processing time.
+
+## Design retries as normal behavior
+
+A worker can fail after it has performed some work but before the next component observes completion. A retry can therefore be a duplicate delivery, not a brand-new job.
+
+The pipeline uses idempotent retries and Redis-held job state. The broader design requirement is to make repeated attempts converge on the intended result, rather than producing duplicate results or restarting unrelated stages.
+
+That requires treating the job identifier and state transitions as part of the contract. A queue moves messages, but it does not decide the application’s meaning of “done.”
+
+## Measure the whole turnaround
+
+The resume records a reduction from a 45–75 minute baseline to 7–11 minutes for a one-hour meeting. Those are reported project results, not a benchmark rerun for this article.
+
+The architectural lesson is useful independently of the exact number: request latency and processing time are different concerns. Give callers a quick, durable acknowledgment, and make the background workflow observable enough to follow.
+
+## Source
+
+Explore the [project case study](/projects/async-audio-pipeline/) or the [source repository](https://github.com/Manishrdy/async-audio-pipeline).

@@ -1,0 +1,49 @@
+---
+title: "Match-state correctness before more workers"
+description: "The reasoning behind a single-worker, multi-thread deployment for SimCricketX."
+date: "2026-09-17"
+tags: ["Backend engineering", "Systems"]
+published: true
+---
+Adding more server workers sounds like the obvious way to make an application handle more traffic. But if the application keeps active state in memory, extra processes can create a different problem: each process has its own version of the world.
+
+For [SimCricketX](/projects/simcricketx/), that world is an in-progress cricket match. Each delivery changes the score, the current players, and the inputs to the next simulated outcome. Consistency matters before concurrency becomes useful.
+
+## A delivery is a state transition
+
+The simulation engine combines match phase, momentum, and pressure when calculating an outcome. Applying a delivery twice, or applying two deliveries to the same prior state, changes the meaning of the match.
+
+A correct update needs to read the current state, calculate the outcome, and apply the resulting state change as one coordinated operation for that match.
+
+The important boundary is **per match**. Two independent matches do not necessarily need to block one another, but two updates to the same match need a clear order.
+
+## Keep the coordination boundary honest
+
+The documented deployment uses per-match threading locks and a single Gunicorn worker with multiple threads. Within that process, threads can coordinate through the same lock and state objects.
+
+```text
+one Gunicorn worker
+  ├─ request thread ─┐
+  ├─ request thread ─┼─ per-match lock → match state
+  └─ request thread ─┘
+```
+
+This is a deliberate constraint, not a claim that a single process is the best architecture for every simulation service. It keeps the coordination mechanism aligned with where the state actually lives.
+
+## Name the scaling tradeoff
+
+The arrangement limits scaling to the capacity of that process. It does not make in-memory state durable, and a threading lock cannot coordinate separate hosts.
+
+If the application needs multiple workers or machines, the state and coordination model must change together. Moving the same code behind more processes without changing those assumptions would make the deployment look larger without preserving the guarantee it depends on.
+
+A shared state store, explicit ownership of a match, or another coordination design would need to become part of that next architecture. Those are future options, not features claimed by this implementation.
+
+## Operate the system you built
+
+The project includes the rest of the path to a usable service: a Flask API, SQLAlchemy persistence, session authentication, Nginx, WebSocket updates, and deployment on OCI.
+
+The lesson is to choose an architecture whose guarantees you can explain. A smaller deployment with an explicit correctness boundary is a solid starting point when you also understand exactly what will need to change as it grows.
+
+## Source
+
+See the [SimCricketX case study](/projects/simcricketx/) and [repository](https://github.com/Manishrdy/SimCricketX). The deployment details here come from the approved resume content.
