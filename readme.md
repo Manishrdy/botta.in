@@ -2,7 +2,7 @@
 
 Manish Botta’s personal engineering portfolio, built with Next.js, React and TypeScript and exported as a static website.
 
-The full public website is implemented: home, about, ten project case studies, three engineering articles, public GitHub activity, contact, and one general engineering résumé. Hosting, DNS and deployment are owner-managed.
+The full public website is implemented: home, about, ten project case studies, three engineering articles, public GitHub activity, contact, and one comprehensive master engineering resume. Hosting, DNS and deployment are owner-managed.
 
 Content is maintained in local JSON and MDX files. There is no admin dashboard, database, authentication system or publish button. The public website does not require a Python server. Python remains available for generating the résumé and for the original content validation tools.
 
@@ -29,6 +29,7 @@ Content is maintained in local JSON and MDX files. There is no admin dashboard, 
 | --- | --- |
 | `/` | Introduction, system illustration, featured projects, experience timeline and recent writing |
 | `/about/` | Biography, four role interests, full experience, skills, education and working principles |
+| `/experience/<id>/` | Four company case studies with ownership, system diagrams, implementation decisions and outcomes |
 | `/projects/` | Searchable project collection with category filters and shareable query parameters |
 | `/projects/<slug>/` | Project problem, approach, system flow, outcome, tradeoff, source links and related work |
 | `/posts/` | Published engineering articles |
@@ -165,94 +166,49 @@ An experience entry uses fields like these:
 
 Use `YYYY-MM` for experience dates. An `endDate` of `null` displays the role as current; keep `current` consistent. Keep each `id` unique and stable. Education uses `start_date` and `end_date`, plus `qualification`, `field` and `institution`; follow an existing entry when adding one.
 
-The order of entries controls the displayed order. Experience bullets also feed the résumé generator, which selects particular bullet indices; see the next section before deleting, reordering or adding jobs.
+The order of entries controls the displayed order. The master resume uses a separate full bullet list; see the next section before changing job IDs or factual claims.
 
 Some display copy is deliberately written in page components. For example, the homepage heading, greeting, location label and company strip are in `frontend/src/app/page.tsx`. The current `profile.headline` field does not drive that heading. See [Changing design and site copy](#changing-design-and-site-copy).
 
 ## Editing the résumé
 
-The public résumé is **one general engineering résumé**, currently two pages, covering software engineering, applied AI and forward-deployed delivery. It includes email, location and links, and excludes the phone number.
+The downloadable file is now a **comprehensive master engineering resume** covering software engineering, AI engineering, forward-deployed engineering and forward-deployed AI. It replaces the previous two-page selection. It currently spans four pages, includes all reviewed experience bullets, and omits the phone number.
 
-These files control the résumé:
+### Content sources
 
-| File | Role |
+| File | What to edit |
 | --- | --- |
-| `frontend/content/profile.json` | Jobs, bullets, skills, education and contact data |
-| `frontend/content/projects.json` | Selected project descriptions, outcomes, repositories and stacks |
-| `frontend/scripts/generate_resume.py` | PDF layout, summary, selection rules and generation |
-| `frontend/public/resume.pdf` | Generated PDF used by the website |
-| `frontend/src/app/resume/page.tsx` | PDF preview/download UI and HTML experience/education summary |
+| `frontend/content/master-resume.json` | Master summary, full experience bullets, ownership scopes, role technologies, prototype notes and selected project slugs |
+| `frontend/content/profile.json` | Shared identity, contact details, job titles/dates, concise About bullets and education |
+| `frontend/content/projects.json` | Selected project titles, repository links and outcomes |
+| `frontend/content/experience.json` | Company case-study copy, diagram titles/captions, tradeoffs and related projects |
+| `frontend/scripts/generate_resume.py` | PDF typography, spacing and pagination |
+| `frontend/public/resume.pdf` | Generated downloadable PDF; overwritten by the generator |
 
-The HTML summary reads profile content when the site builds. It includes all experience bullets and is not a verbatim copy of the curated PDF. **Editing JSON or running `npm run build` alone does not regenerate the PDF.**
+Each master experience entry matches a job in `profile.json` by `id`. Its `bullets` array is the full master content. `scope` explains the ownership or project context. `prototype` is either a separate prototype paragraph or `null`. `skills` supplies that role's technology list. `projectSlugs` selects the supporting projects.
 
-### 1. Edit the résumé content
+There is no longer a hard-coded dictionary of bullet indices. Reordering or adding master bullets works directly. When adding a job, add matching entries to the profile, master resume and company case-study files. Use a stable, unique `id` throughout. Update the concise profile bullets separately when changing a factual claim so the About page and master remain consistent.
 
-Change the appropriate fields in `profile.json`:
+The `/resume/` page renders the full master experience as HTML as well as the PDF. The HTML rebuilds with the site, but **the PDF must be regenerated separately after content edits**.
 
-- Name, location, email and profile link URLs.
-- Company names, titles, dates and accomplishment bullets.
-- Skill groups and education.
+### Generate the PDF
 
-For the selected project descriptions, outcomes and technologies, edit `projects.json`.
-
-For the PDF-only introductory summary, role tagline, footer, document title or visible link labels, edit `generate_resume.py`. These strings are currently written directly in the generator. For example, changing a GitHub URL in JSON updates the link target, but its displayed account label in the PDF must also be changed in the generator.
-
-### 2. Choose experience bullets
-
-The `selected` dictionary in `generate_resume.py` chooses bullets by **zero-based index**:
-
-```python
-selected = {
-    'tradeliv': [0, 1, 2],
-    'microsoft': [0, 2, 3, 4],
-    'yellow-ai': [0, 2, 3],
-    'cognizant': [0],
-}
-```
-
-`0` means the first bullet, `1` the second, and so on. The PDF uses every experience entry, with the bullet selection for its `id`.
-
-- When adding a job, add its `id` and chosen bullet indices to this dictionary.
-- When renaming a job `id`, update the dictionary key.
-- When deleting or reordering bullets, update the indices so they still select the intended text.
-- An unknown job ID raises `KeyError`; an index beyond the available bullets raises `IndexError`.
-
-### 3. Choose projects
-
-The generator currently includes these project slugs in this order:
-
-```python
-['coldstart', 'role-collector', 'simcricketx', 'async-audio-pipeline']
-```
-
-Edit that list to change the selection. Every slug must exist in `projects.json`. Each selected entry uses `title`, `repoUrl`, `description`, `outcome` and the first seven `tags`. The homepage `featured` flag does not control the PDF selection.
-
-### 4. Install ReportLab and generate
-
-From the repository root, create a dedicated environment once:
+From the repository root, create a Python environment and install ReportLab once:
 
 ```sh
 python3 -m venv /tmp/botta-resume-venv
 /tmp/botta-resume-venv/bin/python -m pip install reportlab
 ```
 
-Then generate the PDF:
+Generate after changing the content:
 
 ```sh
 /tmp/botta-resume-venv/bin/python frontend/scripts/generate_resume.py
 ```
 
-The temporary environment can be recreated if the system clears `/tmp`. You can also use any existing Python environment with ReportLab installed.
+This overwrites `frontend/public/resume.pdf` and preserves the original source PDFs under `resume/`. Open the new PDF and check wrapping, dates, links, page breaks and prototype labels. Substantial roles start on new pages; additional content can increase the page count. Adjust the generator's styles or spacing if needed, rather than silently removing experience.
 
-The script overwrites `frontend/public/resume.pdf`. It does not modify the original PDFs under `resume/`. Normal website builds use the existing PDF and do not require ReportLab.
-
-### 5. Review and rebuild
-
-Open `frontend/public/resume.pdf` in a PDF viewer. Check the text, links, dates, line wrapping and page breaks. Adding content can increase the page count: two pages is the current layout, not an enforced maximum.
-
-The generator uses an explicit page break before projects and keeps individual job/project blocks together. To adjust the layout, edit its `style` dictionary, document margins, spacing or selected content. Prefer concise bullets before reducing font sizes.
-
-Rebuild the website after generating the PDF:
+Then rebuild and preview:
 
 ```sh
 cd frontend
@@ -260,11 +216,19 @@ npm run build
 npm run preview
 ```
 
-Check `/resume/` and download the file through the website. The build copies `public/resume.pdf` to `out/resume.pdf`.
+The public path remains `/resume.pdf`; the downloaded filename is `Manish-Botta-Master-Resume.pdf`. Normal website builds use the existing PDF and do not need ReportLab installed.
 
-### Replacing the PDF manually
+### Company case studies
 
-You may place a separately prepared PDF at `frontend/public/resume.pdf` and rebuild. Keep that filename to preserve the existing links. Running the generator later overwrites a manual replacement. Also update the JSON content if you want the HTML experience summary to reflect the replacement.
+About and the homepage link company names to `/experience/<id>/`. The four current IDs are `microsoft`, `yellow-ai`, `tradeliv` and `cognizant`.
+
+Edit `experience.json` for each case study's `title`, `description`, `context`, `ownership`, article `sections`, `tradeoff`, `diagramTitle`, `caption` and related project slugs. Each section has a title and an array of paragraphs.
+
+Edit `frontend/src/lib/architecture.ts` for company-specific system diagrams. Each architecture defines layer groups, service/data/control/person nodes, routed SVG edges, and supporting notes on a 1200-unit canvas. Node coordinates and widths control placement; edge paths control connections. Keep claims grounded in the approved experience and separate prototypes from production. The shared renderer in `frontend/src/components/experience-diagram.tsx` provides a legend, horizontal scrolling on mobile, an expandable dialog with zoom controls, and a text outline. Run `npm run test:architecture --prefix frontend` against the preview server to check the interactions, accessibility, and mobile overflow.
+
+Case studies have static HTML, canonical metadata, social preview images, Article/BreadcrumbList structured data, sitemap entries and links in `llms.txt`. Their diagrams have text alternatives and captions. These features support discoverability; indexing and search placement are not guaranteed.
+
+Keep production and prototype status accurate. TradeLiv's retrieval experiment is labeled as a prototype; Cognizant is an internal proof of concept. Do not copy team-wide scope into a personal achievement without preserving the attribution.
 
 ## Editing projects
 
@@ -476,7 +440,7 @@ Original source PDFs and `.preference/` are ignored by Git. A fresh clone will n
 | Production preview shows old content | Run `npm run build` again; preview serves `out/` |
 | PDF still shows old content | Run the Python generator, rebuild, then reopen the PDF or refresh the browser |
 | `No module named reportlab` | Install ReportLab using the same Python interpreter that runs the generator |
-| PDF generator raises `KeyError` or `IndexError` | Check experience IDs and the zero-based `selected` bullet indices |
+| PDF generator cannot find a job | Match each master experience ID to `profile.json` |
 | PDF generator raises `StopIteration` | A selected project slug no longer exists in `projects.json` |
 | PDF has extra pages or awkward gaps | Shorten selected content or adjust generator spacing; job/project blocks stay together |
 | Project build validation fails | Check required fields, unique slugs and HTTPS links; use `null` for absent optional links |
