@@ -2,7 +2,7 @@
   {
     "id": "navi-technologies-inc",
     "title": "Grounding a field-sales agent in the right evidence",
-    "description": "My component-level work on enterprise retrieval, stateful agent workflows and production reliability at Navi Technologies Inc..",
+    "description": "My component-level work on enterprise retrieval, stateful agent workflows and production reliability at Microsoft.",
     "context": "Field-sales teams needed answers from contracts, CRM records and internal databases that were spread across Salesforce, HubSpot, OneDrive and SQL systems. Retrieving the right passage was only one part of the problem: the agent also needed to maintain context, execute tools reliably and return an answer grounded in the evidence.",
     "ownership": "I joined an existing team system as a contract software engineer. I implemented new LangGraph use cases and extended existing workflows, with direct work on retrieval, guardrails, failure controls and RLHF. The overall agent served 75,000 daily active users; the component/request category I worked on processed 1.5 million requests over six months.",
     "sections": [
@@ -115,7 +115,7 @@
       {
         "title": "An earlier retrieval experiment",
         "paragraphs": [
-          "I also explored heading-based parent/child retrieval in a prototype, adapting the approach first implemented at Navi Technologies Inc.. It was an experiment in preserving document context, not part of the current production application.",
+          "I also explored heading-based parent/child retrieval in a prototype, adapting the approach first implemented at Microsoft. It was an experiment in preserving document context, not part of the current production application.",
           "The production story here centers on product extraction, client collaboration and procurement. The prototype is kept separate so its status and contribution are clear."
         ]
       }

@@ -15,7 +15,7 @@
       "id": "aie",
       "kind": "resume",
       "filename": "ManishBotta_Resume_AIE.pdf",
-      "sha256": "e4e868bb236d083986cc50ffd5279ce87b5d8c03b7e30317c49a0b157210b5d9",
+      "sha256": "eeed5bff2a73a5cf2bcaf58c6d241fed3467478686fe8e55a1d5613a68f85f7a",
       "pages": 2,
       "url": null,
       "git_blob_sha": null
@@ -24,7 +24,7 @@
       "id": "fde",
       "kind": "resume",
       "filename": "ManishBotta_Resume_FDE_SWE.pdf",
-      "sha256": "63253affc25dca6733c0a5287030cdb4abbe3d2c7c0cd92a9560ce1ed42a7b8a",
+      "sha256": "691a8f9d1a40bcd833e177d71b1b36aaef1d6ad06b01d128552274deed8af570",
       "pages": 2,
       "url": null,
       "git_blob_sha": null
@@ -33,7 +33,7 @@
       "id": "ai-fde",
       "kind": "resume",
       "filename": "ManishBotta_Resume_AI_FDE.pdf",
-      "sha256": "2292a3114d10719ed0c0d70e78c9ddfd0ba4a5c9abb61a5b123cb0c99472e304",
+      "sha256": "d4e2817d31580267584ef51977b5f1eab7e581cda266d65d7f0e1c819232cabc",
       "pages": 2,
       "url": null,
       "git_blob_sha": null
@@ -42,7 +42,7 @@
       "id": "owner",
       "kind": "owner_response",
       "filename": ".preference/phase-0-owner-clarifications.txt",
-      "sha256": "1a2bcbacc7ef172a044429653e86b49c4d921b45a045419d6949ffc9893fc062",
+      "sha256": "307acdec90fb651d701177ce4923629aaae9d70af9e7f5ef42389bc7878cbfd6",
       "pages": null,
       "url": null,
       "git_blob_sha": null
