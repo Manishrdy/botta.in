@@ -6,7 +6,7 @@ const browser=await chromium.launch({headless:true,channel:'chrome'});
 const context=await browser.newContext();const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.route('https://api.github.com/**',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(route.request().url().includes('/events/')?[]:{public_repos:24,followers:8})}));
 await page.route('https://github-contributions-api.jogruber.de/**',route=>route.fulfill({status:503,body:'{}'}));
-const routes=['/','/about/','/projects/','/projects/coldstart/','/posts/','/posts/filter-before-you-score/','/contact/','/activity/','/resume/','/experience/microsoft/','/experience/yellow-ai/','/experience/tradeliv/','/experience/cognizant/'];
+const routes=['/','/about/','/projects/','/projects/coldstart/','/posts/','/posts/filter-before-you-score/','/contact/','/activity/','/resume/','/experience/navi-technologies-inc/','/experience/yellow-ai/','/experience/tradeliv/','/experience/cognizant/'];
 for(const route of routes){
  await page.goto(`http://127.0.0.1:3000${route}`);await page.waitForTimeout(150);
  for(const width of [390,1440]){

@@ -220,7 +220,7 @@ The public path remains `/resume.pdf`; the downloaded filename is `Manish-Botta-
 
 ### Company case studies
 
-About and the homepage link company names to `/experience/<id>/`. The four current IDs are `microsoft`, `yellow-ai`, `tradeliv` and `cognizant`.
+About and the homepage link company names to `/experience/<id>/`. The four current IDs are `navi-technologies-inc`, `yellow-ai`, `tradeliv` and `cognizant`.
 
 Edit `experience.json` for each case study's `title`, `description`, `context`, `ownership`, article `sections`, `tradeoff`, `diagramTitle`, `caption` and related project slugs. Each section has a title and an array of paragraphs.
 

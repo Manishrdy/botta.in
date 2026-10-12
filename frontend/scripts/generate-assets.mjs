@@ -11,7 +11,7 @@ async function card(file,title,label){const chunks=lines(title);const svg=`<svg 
 await card('og.png','Backend depth. AI in production.','Software, from the first question to the last mile.');
 for(const p of projects)await card(`projects/${p.slug}-og.png`,p.title,p.category);
 for(const file of fs.readdirSync(path.join(root,'content/posts')).filter(f=>f.endsWith('.mdx'))){const {data}=matter(fs.readFileSync(path.join(root,'content/posts',file),'utf8'));if(data.published)await card(`posts/${file.replace('.mdx','')}-og.png`,data.title,'Field notes / '+data.tags[0]);}
-for(const e of JSON.parse(fs.readFileSync(path.join(root,'content/experience.json'),'utf8')))await card(`experience/${e.id}-og.png`,e.title,e.id==='yellow-ai'?'Yellow.ai':e.id==='tradeliv'?'TradeLiv':e.id[0].toUpperCase()+e.id.slice(1));
+for(const e of JSON.parse(fs.readFileSync(path.join(root,'content/experience.json'),'utf8')))await card(`experience/${e.id}-og.png`,e.title,e.id==='navi-technologies-inc'?'Navi Technologies Inc.':e.id==='yellow-ai'?'Yellow.ai':e.id==='tradeliv'?'TradeLiv':e.id[0].toUpperCase()+e.id.slice(1));
 const icon=fs.readFileSync(path.join(pub,'favicon.svg'));
 for(const [file,size] of [['apple-touch-icon.png',180],['icon-192.png',192],['icon-512.png',512]])await sharp(icon).resize(size,size).png().toFile(path.join(pub,file));
 console.log('Generated social cards and app icons.');

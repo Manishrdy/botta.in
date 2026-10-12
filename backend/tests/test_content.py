@@ -28,9 +28,9 @@ class ContentTests(unittest.TestCase):
             seed.require_import_ready()
 
     def test_confirmed_date_and_no_invented_day(self):
-        microsoft = next(role for role in self.raw["experience"] if role["id"] == "microsoft")
-        self.assertEqual(microsoft["end_date"], "2026-04")
-        microsoft["end_date"] = "2026-04-01"
+        navi_technologies_inc = next(role for role in self.raw["experience"] if role["id"] == "navi-technologies-inc")
+        self.assertEqual(navi_technologies_inc["end_date"], "2026-04")
+        navi_technologies_inc["end_date"] = "2026-04-01"
         with self.assertRaises(ValidationError):
             ContentSeed.model_validate(self.raw)
 

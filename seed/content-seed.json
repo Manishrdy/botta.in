@@ -6,7 +6,7 @@
       "id": "swe",
       "kind": "resume",
       "filename": "ManishBotta_Resume_SWE.pdf",
-      "sha256": "10d139d49b40d320222d1db4c3ce0825825389cda2da1e8bb829ba9bd887b760",
+      "sha256": "ea6ab031bc361dd185817c9b619f56cb2d52ce4ed8fee394aaaea78fb550548e",
       "pages": 2,
       "url": null,
       "git_blob_sha": null
@@ -15,7 +15,7 @@
       "id": "aie",
       "kind": "resume",
       "filename": "ManishBotta_Resume_AIE.pdf",
-      "sha256": "9b3f2972457d3c6d88cc68a614bacdb57d3e54c30f907a39999b82582a00f41e",
+      "sha256": "e4e868bb236d083986cc50ffd5279ce87b5d8c03b7e30317c49a0b157210b5d9",
       "pages": 2,
       "url": null,
       "git_blob_sha": null
@@ -24,7 +24,7 @@
       "id": "fde",
       "kind": "resume",
       "filename": "ManishBotta_Resume_FDE_SWE.pdf",
-      "sha256": "a5f3e6c88bbb3bcfd9d239f3ef6a9e8259800650792b7d60ec6eb90343862331",
+      "sha256": "63253affc25dca6733c0a5287030cdb4abbe3d2c7c0cd92a9560ce1ed42a7b8a",
       "pages": 2,
       "url": null,
       "git_blob_sha": null
@@ -33,7 +33,7 @@
       "id": "ai-fde",
       "kind": "resume",
       "filename": "ManishBotta_Resume_AI_FDE.pdf",
-      "sha256": "0e576b32d345f0249e50d155807e7ddc31064ab54345b6a646dfcfb0b51c1722",
+      "sha256": "2292a3114d10719ed0c0d70e78c9ddfd0ba4a5c9abb61a5b123cb0c99472e304",
       "pages": 2,
       "url": null,
       "git_blob_sha": null
@@ -42,7 +42,7 @@
       "id": "owner",
       "kind": "owner_response",
       "filename": ".preference/phase-0-owner-clarifications.txt",
-      "sha256": "307acdec90fb651d701177ce4923629aaae9d70af9e7f5ef42389bc7878cbfd6",
+      "sha256": "1a2bcbacc7ef172a044429653e86b49c4d921b45a045419d6949ffc9893fc062",
       "pages": null,
       "url": null,
       "git_blob_sha": null
@@ -364,8 +364,8 @@
       "order": 0
     },
     {
-      "id": "microsoft",
-      "company": "Microsoft",
+      "id": "navi-technologies-inc",
+      "company": "Navi Technologies Inc.",
       "role": "Software Engineer (Contract)",
       "employment_type": "Contract",
       "location": null,
@@ -1822,8 +1822,8 @@
   ],
   "review_issues": [
     {
-      "id": "microsoft-end-date",
-      "entity": "microsoft",
+      "id": "navi-technologies-inc-end-date",
+      "entity": "navi-technologies-inc",
       "question": "March or April 2026?",
       "evidence": [
         "AIE and AI_FDE: March 2026",
@@ -1833,8 +1833,8 @@
       "resolution": "Owner confirmed April 2026."
     },
     {
-      "id": "microsoft-request-period",
-      "entity": "microsoft",
+      "id": "navi-technologies-inc-request-period",
+      "entity": "navi-technologies-inc",
       "question": "Period for 1.5 million requests?",
       "evidence": [
         "AIE and AI_FDE omit the period."

@@ -6,7 +6,7 @@ const profile=JSON.parse(fs.readFileSync('content/profile.json'));
 const projects=JSON.parse(fs.readFileSync('content/projects.json'));
 test('approved identity and dates remain intact',()=>{
  assert.equal(profile.email,'manish.botta@hotmail.com');
- assert.equal(profile.experience.find(e=>e.company==='Microsoft').endDate,'2026-04');
+ assert.equal(profile.experience.find(e=>e.company==='Navi Technologies Inc.').endDate,'2026-04');
  assert.ok(!JSON.stringify(profile).includes('phone'));
 });
 test('project slugs are unique and source links use HTTPS',()=>{

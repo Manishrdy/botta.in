@@ -7,7 +7,7 @@
   "githubUsername": "Manishrdy",
   "linkedin": "https://linkedin.com/in/manish-reddyb",
   "headline": "Backend depth.\nAI in production.",
-  "intro": "I build the systems behind the product. From retrieval agents for Microsoft’s field sales teams to a B2B platform built from the ground up, I take software from the first question to production.",
+  "intro": "I build the systems behind the product. From retrieval agents for Navi Technologies Inc.’s field sales teams to a B2B platform built from the ground up, I take software from the first question to production.",
   "roleInterests": [
     "Software engineering",
     "AI engineering",
@@ -16,7 +16,7 @@
   ],
   "bio": [
     "I’m a software engineer based in San Francisco. My work lives where backend engineering, applied AI, and real customer problems meet.",
-    "I’ve built retrieval and agent systems inside Microsoft’s sales organization, worked with enterprise teams at Yellow.ai, and owned product and engineering for TradeLiv as its first and sole engineer.",
+    "I’ve built retrieval and agent systems inside Navi Technologies Inc.’s sales organization, worked with enterprise teams at Yellow.ai, and owned product and engineering for TradeLiv as its first and sole engineer.",
     "I enjoy the parts that make a system useful beyond a demo: permission checks, thoughtful data models, reliable queues, and a clear path from a customer’s problem to something they can use. I’m comfortable moving between architecture, implementation, and the conversations that shape both."
   ],
   "experience": [
@@ -49,8 +49,8 @@
       "scope": "First hire and sole engineer; product discovery through full-stack delivery."
     },
     {
-      "id": "microsoft",
-      "company": "Microsoft",
+      "id": "navi-technologies-inc",
+      "company": "Navi Technologies Inc.",
       "role": "Software Engineer (Contract)",
       "startDate": "2025-08",
       "endDate": "2026-04",

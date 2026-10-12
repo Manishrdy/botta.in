@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 fs.mkdirSync('../.preference/qa',{recursive:true});
 const browser=await chromium.launch({channel:'chrome',headless:true});const context=await browser.newContext({viewport:{width:1440,height:1000}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-for(const company of ['microsoft','yellow-ai','tradeliv','cognizant']){
+for(const company of ['navi-technologies-inc','yellow-ai','tradeliv','cognizant']){
  await page.goto(`http://127.0.0.1:3000/experience/${company}/`);await page.locator('.architecture-figure').scrollIntoViewIfNeeded();
  await page.locator('.architecture-figure').screenshot({path:`../.preference/qa/architecture-${company}.png`});
  await page.getByRole('button',{name:'Expand diagram'}).click();await page.getByRole('dialog').waitFor();

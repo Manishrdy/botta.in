@@ -1,6 +1,6 @@
 {
   "title": "Master Engineering Resume",
-  "summary": "Software engineer with experience building backend platforms, production AI components and enterprise integrations. Combines hands-on implementation with customer discovery, technical tradeoff discussions and production delivery. Experience spans a solo-built B2B SaaS product, retrieval and agent workflows for Microsoft field sales, and conversational-AI product development and customer delivery at Yellow.ai.",
+  "summary": "Software engineer with experience building backend platforms, production AI components and enterprise integrations. Combines hands-on implementation with customer discovery, technical tradeoff discussions and production delivery. Experience spans a solo-built B2B SaaS product, retrieval and agent workflows for Navi Technologies Inc. field sales, and conversational-AI product development and customer delivery at Yellow.ai.",
   "roleTracks": [
     "Software engineering",
     "AI engineering",
@@ -32,10 +32,10 @@
         "AI-assisted extraction",
         "SSE"
       ],
-      "prototype": "Extended an earlier retrieval approach into a TradeLiv prototype, preserving document-section context through heading-based parent/child chunks, by adapting the technique first implemented at Microsoft to TradeLiv's retrieval experiments."
+      "prototype": "Extended an earlier retrieval approach into a TradeLiv prototype, preserving document-section context through heading-based parent/child chunks, by adapting the technique first implemented at Navi Technologies Inc. to TradeLiv's retrieval experiments."
     },
     {
-      "id": "microsoft",
+      "id": "navi-technologies-inc",
       "scope": "Owned retrieval, orchestration and reliability components within a team-built field-sales agent. Overall agent: 75,000 daily active users. Owned component/request category: 1.5 million requests over six months.",
       "bullets": [
         "Delivered retrieval and orchestration components processing 1.5 million requests over six months within a field-sales agent serving 75,000 daily active users by implementing and extending workflows across CRM, document and SQL data sources on Azure.",

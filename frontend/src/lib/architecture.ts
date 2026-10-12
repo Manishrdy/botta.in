@@ -3,7 +3,7 @@ export type DiagramEdge={path:string;label?:string;x?:number;y?:number;kind?:'as
 export type DiagramGroup={x:number;y:number;w:number;h:number;title:string;subtitle:string};
 export type Architecture={height:number;intro:string;groups:DiagramGroup[];nodes:DiagramNode[];edges:DiagramEdge[];notes:string[]};
 export const architectures:Record<string,Architecture>={
- microsoft:{height:1090,intro:'Stateful orchestration, evidence retrieval and bounded failure handling.',groups:[
+ 'navi-technologies-inc':{height:1090,intro:'Stateful orchestration, evidence retrieval and bounded failure handling.',groups:[
  {x:20,y:20,w:1160,h:340,title:'01 / REQUEST & ORCHESTRATION',subtitle:'A bounded execution path for field-sales questions'},
  {x:20,y:390,w:1160,h:220,title:'02 / TOOL & RETRIEVAL LAYER',subtitle:'Select sources according to the query and current graph state'},
  {x:20,y:660,w:1160,h:230,title:'03 / KNOWLEDGE PREPARATION',subtitle:'Incremental document processing preserves section context'},
