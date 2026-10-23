@@ -22,7 +22,7 @@ export default function Home() {
    <Link className="hero-availability" href="/contact/"><span aria-hidden="true"/>Open to engineering opportunities</Link>
   </div>
   <figure className="hero-portrait">
-   <div className="portrait-window"><Image src="/manish-botta.jpg" alt="Manish Botta wearing a dark blazer outdoors" width={960} height={1280} preload sizes="(max-width: 600px) 280px, (max-width: 900px) 320px, 380px"/></div>
+   <div className="portrait-window"><Image src="/manish-botta.jpg" alt="Manish Botta wearing a white polo shirt" width={1200} height={900} preload sizes="(max-width: 600px) 280px, (max-width: 900px) 320px, 380px"/></div>
    <figcaption><span>Software &amp; AI engineer</span><span><MapPin size={13}/> San Francisco</span></figcaption>
   </figure>
  </section>
